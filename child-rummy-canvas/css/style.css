@@ -1,0 +1,62 @@
+body {
+    font-family: monospace;
+    font-family: 'Ubuntu', sans-serif;
+    margin: 0px;
+    padding: 0px;
+    background-color: gainsboro;
+}
+
+#GameBoard {
+    float: left;
+    background-color: #4554B5;
+    border: 1px solid black;
+    color: white;
+}
+
+#Board {
+    float: left;
+    background-color: #4554B5;
+    border: 1px solid black;
+}
+
+#deal { 
+    position: absolute;
+    top: 67px;
+    left: 480px;
+    z-index: 10;
+    border: thin solid black;
+    background-color: gray;
+    padding: 10px;
+    color: lightGray;
+
+}
+
+#enable_AI, #show_AI_hand{
+    border: thin solid black;
+    padding: 10px;
+    background-color: gray;
+    color: lightGray;
+}
+
+#deal:hover, #enable_AI:hover, #show_AI_hand:hover {
+    color: white;
+    cursor: pointer;
+    background-color: darkGray;
+}
+
+.left {
+    float: left;
+    margin-left: 20px;
+}
+.right {
+    float: right;
+    margin-right: 20px;
+}
+.right > select {
+    padding: 20px;
+    display: block;
+}
+
+.center {
+    text-align: center;
+}

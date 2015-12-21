@@ -1,0 +1,145 @@
+<!doctype html>
+<html>
+	<head>
+		<title>Raphael Demo</title>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Ubuntu">
+		<script src="lib/jQuery.js"></script>
+		<script src="lib/raphael.js"></script>
+		<script src="lib/graph-raphael.js"></script>
+		<script src="lib/pie.js"></script>
+		<script src="lib/bar.js"></script>
+		<script src="lib/easystar.js"></script>
+
+		<script src="bower_components/pathfinding/pathfinding-browser.min.js"></script>
+
+		<link rel="stylesheet" href="css/style.css">
+		<link rel="stylesheet" href="css/elements.css">
+		<script src="js/header.js"></script>
+		<script src="js/charts.js"></script>
+		<script src="js/trees.js"></script>
+		<script src="js/pathFinder2.js"></script>
+		<script src="js/elements.js"></script>
+
+		<script type="text/javascript">
+			var log = function (w) {
+				console.log(w);
+			};
+
+			//Generate the global object
+			(function () {
+				window.GlobalObject = window.GlobalObject || {};
+			})();
+		</script>
+	</head>
+		<div id="pathFinder">
+			<div class="buttons">
+				<span id="startSearch">Start Search</span>
+			</div>
+			<div id="pathCanvas"></div>
+		</div>
+
+		<div id="header">
+			<div id="headerCanvas"></div>
+			<h1 class="headerTitle">Raphael JS Demo</h1>
+			<p>Raphaël is a small JavaScript library that should simplify your work with vector graphics on the web. If you want to create your own specific chart or image crop and rotate widget, for example, you can achieve it simply and easily with this library.
+			<h3>Common Needs for Web Graphics:</h3>
+			<ul>
+				<li>DOM element transforms: <span class="uses">CSS3</span></li>
+					<div id="pageEl"></div>
+				<li>Page layouts and scaffolding: <span class="uses">CSS3</span></li>
+				<li>Imported SVGs: <span class="uses">SVG, CSS3 </span>(<a href="http://stackoverflow.com/questions/7926643/raphael-js-use-a-svg-file">cannot be manipulated by Raphael</a>, but there are extensions to do this)</li>
+				<div id="logo">
+					<img src="resources/graphic.svg"/>
+				</div>
+				<li>On-the-fly custom shapes (charts) and animations: <span class="uses">Raphael</span></li>
+			</ul>
+
+			<h3>Benefits of Raphael:</h3>
+			<ul>
+				<li>Backwards compatibility: Degrades to VML vector graphics in older browsers (IE 8)</li>
+				<li>Based on SVG: infinite scaling, and greater flexibility with declaring draw paths and fills (lines, arcs, bezier arcs, etc)</li>
+				<li>Easily create SVG shapes and animations without having to import</li>
+			</ul>
+
+			<h3>Why NOT use SVG?</h3>
+			<ul>
+				<li>Rendering thousands of nodes, more performant to do rendering in canvas (no vector math… paints mapped pixels)</li>
+				<li>Requires support for IE8 - vector fallback is VML</li>
+				<li>Cannot manipulate existing HTML/non SVG shapes</li>
+			</ul>
+		</div><br/>
+		<div id="Comparisons">
+			<h2>Commonalities: CSS3, SVG and Raphael:</h2>
+			<h4>CSS3, SVG, and Raphael shape creation and animation</h4>
+
+			<div id="svgShapes">
+				<svg width="500" height="100">
+					<circle id="svg-circle" r="30" cx="130" cy="50" fill="orange" stroke="orange" fill-opacity="0.5"/>
+					<text id="svg-text" x="115" y="55" fill="white">SVG</text>
+
+					<animate
+						xlink:href="#svg-circle"
+						attributeName="cx"
+						from="130"
+						to="450"
+						dur="1s"
+						begin="click"
+						fill="freeze">
+					</animate>
+
+					<animate
+						xlink:href="#svg-text"
+						attributeName="x"
+						from="130"
+						to="435"
+						dur="1s"
+						begin="click"
+						fill="freeze">
+					</animate>
+				</svg>
+			</div>
+			<div id="cssShapes">
+				<div id="circle">CSS</div>
+			</div>
+			<div id="elementsCanvas"></div>
+		</div>
+		<div id="Charts">
+
+			<h2>Draw and animate custom graphs on the fly</h2>
+			<h4>Shape pathing can be updated and animated on events</h4>
+			Add another sport:<br>
+			<input type="text" id="addOption"/>
+			<button id="addMoreOptions" onclick="GlobalObject.Charts.addMoreOptions()">Add</button>
+			<hr>
+
+			<div id="Inputs">
+				<input type="text" class="basketball" placeholder="basketball"/>
+				<input type="text" class="baseball" placeholder="baseball"/>
+				<input type="text" class="frisbee" placeholder="frisbee"/>
+			</div>
+			<button id="sendData" onclick="GlobalObject.Charts.generateCharts()">Generate Chart</button>
+			<div id="chartsCanvas"></div>
+		</div>
+		<div id="Trees">
+			<div id="TreeTraversal">
+				<h2>Animating shape sets and drawing custom lines</h2>
+				<h4>Group shapes and shape attributes (such as text) into sets and animate together</h4>
+				<div class="buttons">
+					<span id="runBFS">BFS</span> |
+					<span id="runDFS">DFS</span> |
+					<span id="createNode">Create Node</span>
+				</div><br/>
+				<div id="treeLbl">Tree <hr>
+					<div id="treeCanvas"></div>
+				</div>
+				<div id="matrixLbl">Adjacency Matrix <hr>
+					<div id="grid"></div>
+					</div>
+				<div id="dsLbl">Datastructure Output <hr>
+					<div id="myQueue"></div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

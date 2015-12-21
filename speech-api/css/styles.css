@@ -1,0 +1,44 @@
+
+#toggle_speech {
+	color: gray;
+}
+#toggle_speech:hover {
+	color: black;
+	cursor: pointer;
+}
+
+.active {
+	border: thin solid #E0E0E0 ;
+	background-color: white;
+	position: relative;
+	box-shadow: 10px 10px 5px #888888;
+
+}
+
+.article > span {
+    float: left;
+    padding: 10px;
+    width: 250px;
+    margin: 10px;
+    height: 50%;
+    position: relative;
+}
+
+.article > span > img {
+	margin-top: 20px;
+	position: absolute;
+	top: 40%;
+}
+
+.article > span:hover {
+	background-color: #F0F0F0;
+	cursor: pointer;
+}
+
+#error {
+	color: red;
+}
+
+img {
+	width: 75%;
+}
