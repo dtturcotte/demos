@@ -84,7 +84,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 							} else if (card.current_deck === 'in_deck') {
 								y_change = (player_clone.isOpponent) ? 10 : 0;
 							}
-							return (player_clone.y + y_change + ((player_clone.isOpponent) ? -200 : 110))
+							return (player_clone.y + y_change + ((player_clone.isOpponent) ? -150 : 140))
 						})()
 					}, 500, 'backout', function () {
 						if (!that.current_player.isOpponent || Control_Panel.show_AI_hand) {
@@ -108,8 +108,8 @@ document.addEventListener("DOMContentLoaded", function(event) {
 					}
 
 					card.set.animate({
-						x : 590 + ((this.current_player.isOpponent) ? 10 : 0),
-						y : 400
+						x : 620 + ((this.current_player.isOpponent) ? 10 : 0),
+						y : 320
 					}, 500, 'backout', function () {
 						callback(card);
 					});	
@@ -247,8 +247,8 @@ document.addEventListener("DOMContentLoaded", function(event) {
 								(function (card, player, index, resolve) {
 									card.set.animate(
 										{
-											x: (player.x += 110)-table.w/2,
-											y: player.y + ((player.isOpponent) ? -200 : 100)
+											x: (player.x += 100)-table.w/2.5,
+											y: player.y + ((player.isOpponent) ? -150 : 130)
 										},1000, 'backOut', function () {
 											if (!player.isOpponent || Control_Panel.show_AI_hand) card.shape_image.show();		
 											resolve();
@@ -559,20 +559,22 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
 				var player = new Player(table.tableCanvas, {
 					id : 1,
-					x : table.w/2,
-					y : 100,
+					x : ((table.w/2)-50),
+					y : 20,
 					name : 'MainPlayer',
 					isOpponent : false,
-					isDealer : true
+					isDealer : true,
+					scale: 2
 				});
 
 				var computer = new Player(table.tableCanvas, {
 					id : 2,
-					x : table.w/2,
-					y : table.h-100,					
+					x : ((table.w/2)-50),
+					y : 650,					
 					name : 'Computer',
 					isOpponent : true,
-					isDealer : false
+					isDealer : false,
+					scale: 2
 				});
 
 				return {
@@ -597,8 +599,8 @@ document.addEventListener("DOMContentLoaded", function(event) {
 							name : alts.name,
 							value : values[j],
 							x : ((table.w/2)-100),
-							y : (table.h/2)-100, 
-							scale : 5,
+							y : ((table.h/2)-70), 
+							scale : 6,
 							isDrawable : false,
 							isThrowable : false,
 							current_deck : 'in_deck'

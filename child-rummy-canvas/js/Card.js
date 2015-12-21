@@ -43,7 +43,7 @@ var Card = function(manager, canvas, args) {
 		function(e) {
 			if ((this.isDrawable || this.isThrowable) && (manager.getCurrentPlayer().name === 'MainPlayer') && (this.current_deck !== 'in_Computer_hand')) {
 				if (this.isDrawable) {
-					this.set.attr('stroke', "#acff66");
+					this.set.attr('stroke', "white");
 				} else {
 					this.set.attr('stroke', "red");
 				}

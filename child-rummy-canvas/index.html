@@ -23,42 +23,46 @@
 		<div id="GameBoard">
 			<h2 class="center">Daniel Turcotte's Child Rummy ver 1.0!</h2>
 			<div class="left">
-				<h3><u>Player Data</u></h3>
-				<h4>Step: <span id="step"></span></h4>
-				<p>Player Runs: <span id="runs"></span></p>
-				<p>Player Melds: <span id="melds"></span></p>
-				<h3><u>Scores</u></h3>
-				<p><i>Player Points:</i> <span id="MainPlayer_points">0</span></p>
-				<p><i>CPU Points:</i> <span id="Computer_points">0</span></p>
-			</div>
-			<div class="right">
-				<h3><u>Control Panel</u></h3>
-				<p id="enable_AI">Enable AI game</p>
-				<p id="show_AI_hand">Show AI hand</p>
-				<label for="run_threshold">Run Threshold</label>
-				<select id="run_threshold">
-					<option value="1">1</option>
-					<option value="2">2</option>
-					<option value="3">3</option>
-					<option value="4" selected="selected">4</option>
-				</select>
+				<div class="Player-Data">
+					<h3 class="heading"><u>Player Data</u></h3>
+					<h4 class="step">Step: <span id="step"></span></h4>
+					<p>Player Runs: <span id="runs"></span></p>
+					<p>Player Melds: <span id="melds"></span></p>
+					<hr>
+					<h3 class="heading"><u>Scores</u></h3>
+					<p><i>Player Points:</i> <span id="MainPlayer_points">0</span></p>
+					<p><i>CPU Points:</i> <span id="Computer_points">0</span></p>
+				</div>
+				<hr>
+				<div class="Control-Panel">
+					<h3 class="heading"><u>Control Panel</u></h3>
+					<p id="enable_AI">Enable AI game</p>
+					<p id="show_AI_hand">Show AI hand</p>
+					<label for="run_threshold">Run Threshold:</label>
+					<select id="run_threshold">
+						<option value="1">1</option>
+						<option value="2">2</option>
+						<option value="3">3</option>
+						<option value="4" selected="selected">4</option>
+					</select>
 
-				<label for="meld_threshold">Meld Threshold</label>
-				<select id="meld_threshold">
-					<option value="1">1</option>
-					<option value="2">2</option>
-					<option value="3" selected="selected">3</option>
-				</select>
+					<label for="meld_threshold">Meld Threshold:</label>
+					<select id="meld_threshold">
+						<option value="1">1</option>
+						<option value="2">2</option>
+						<option value="3" selected="selected">3</option>
+					</select>
 
-				<label for="speed">Game Speed</label>
-				<select id="speed">
-					<option value="2000">Slowest</option>
-					<option value="1500">Slower</option>
-					<option value="1000" selected="selected">Normal</option>
-					<option value="500">Faster</option>
-					<option value="200">Fastest</option>
-				</select>				
-			</div>
+					<label for="speed">Game Speed:</label>
+					<select id="speed">
+						<option value="2000">Slowest</option>
+						<option value="1500">Slower</option>
+						<option value="1000" selected="selected">Normal</option>
+						<option value="500">Faster</option>
+						<option value="200">Fastest</option>
+					</select>	
+				</div>	
+			</div>			
 			<h1 id="deal">Deal</h1>
 			<!--Canvas-->
 			<div id="Table"></div>

@@ -24,7 +24,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 	})();	
 
 	(function () {
-		Rummy.Table.init('Table', 1000, 1000);
+		Rummy.Table.init('Table', 1050, 783);
 	})();
 
 });

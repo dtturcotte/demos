@@ -7,34 +7,34 @@ body {
 }
 
 #GameBoard {
-    float: left;
-    background-color: #4554B5;
+    background-color: #303030;
     border: 1px solid black;
     color: white;
+    width: 1300px;
+    height: 850px;
 }
 
-#Board {
+#Table {
+    width: 1050px;
     float: left;
-    background-color: #4554B5;
-    border: 1px solid black;
+    height: 783px
 }
 
 #deal { 
     position: absolute;
-    top: 67px;
-    left: 480px;
+    top: 45%;
+    left: 57%;
     z-index: 10;
     border: thin solid black;
-    background-color: gray;
+    background-color: rgba(0,0,0,.4);
     padding: 10px;
     color: lightGray;
-
 }
 
 #enable_AI, #show_AI_hand{
     border: thin solid black;
     padding: 10px;
-    background-color: gray;
+    background-color: rgba(100,100,100,.4);
     color: lightGray;
 }
 
@@ -44,15 +44,22 @@ body {
     background-color: darkGray;
 }
 
+.heading {
+    color: #00CCFF;
+}
+
+.step {
+    height: 30px; 
+}
+
 .left {
+    margin-left: 5px;
+    width: 180px;
+    padding: 20px;
+    background-color: rgba(0,0,0,.4);
     float: left;
-    margin-left: 20px;
 }
-.right {
-    float: right;
-    margin-right: 20px;
-}
-.right > select {
+.left > select {
     padding: 20px;
     display: block;
 }
