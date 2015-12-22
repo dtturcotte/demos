@@ -11,7 +11,7 @@ var Card = function(manager, canvas, args) {
 	this.set = canvas.set();
 	this.revealed = false;
 	this.shape = canvas.rect(this.x, this.y, this.w/this.scale, this.h/this.scale, 10);
-	this.image = 'Playing Cards/PNG-cards-1.3/' + args.name + '_of_' + args.suit_image + '.png';
+	this.image = 'Playing Cards/SVG-cards-1.3/' + args.name + '_of_' + args.suit_image + '.svg';
 	this.shape_image = canvas.image(this.image, this.x, this.y, this.w/this.scale, this.h/this.scale);
 	this.shape_image.hide();
 	this.id = args.id || 1;

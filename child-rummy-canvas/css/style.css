@@ -6,6 +6,13 @@ body {
     background-color: gainsboro;
 }
 
+h3 {
+    margin: 0px;
+}
+p {
+    margin-bottom: 15px;
+}
+
 #GameBoard {
     background-color: #303030;
     border: 1px solid black;
@@ -42,6 +49,15 @@ body {
     color: white;
     cursor: pointer;
     background-color: darkGray;
+}
+
+#runs, #melds, #deadwood {
+    height: 50px;
+}
+
+.player_sets {
+    width: 20%;
+    margin: 1px;
 }
 
 .heading {

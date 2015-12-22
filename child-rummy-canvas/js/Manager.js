@@ -151,8 +151,8 @@ document.addEventListener("DOMContentLoaded", function(event) {
 				card.valueSet = 'deadwood'; 
 				card.isThrowable = false;
 				
-				// after they've thrown it, calculate if their hand is winning
-				this.checkStatus(this.calculate(this.current_player, false));
+				// after they've thrown it, calculate if their hand is winning		
+				this.checkStatus(this.calculate(this.current_player, null), false);
 			};
 
 			api.setPlayerTurn = function () {
@@ -190,7 +190,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 				this.space_player = null;
 				this.space_cpu = null;
 
-				this.updateHUD({ runs : '', melds : '' });
+				this.updateHUD(null, [], []);
 
 				if (!$('#deal').is(':visible')) {
 					$('#deal').show();
@@ -199,11 +199,20 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
 			api.checkStatus = function (data, deal) {
 
+				var meld_cards = data.filter(function (card) {
+					return card.valueSet === 'meld';
+				})
+				var run_cards = data.filter(function (card) {
+					return card.valueSet === 'run';
+				});
+
 				if (this.current_player.name === 'MainPlayer') {
-					this.updateHUD(data);
+					this.updateHUD(data, meld_cards, run_cards);
 				}
 
-				if (data.melds.length && data.runs.length) {
+				console.log('checkStatus', meld_cards, run_cards);
+
+				if (meld_cards.length === Control_Panel.meld_threshold && run_cards.length === Control_Panel.run_threshold) {
 					this.current_player.points += 100;
 					$('#' + this.current_player.name + '_points').html(this.current_player.points);
 					alert(this.current_player.name + ' has won!');
@@ -211,16 +220,30 @@ document.addEventListener("DOMContentLoaded", function(event) {
 				} else {
 					if (!deal) {
 						this.setPlayerTurn();
-						this.nextTurn();
-					} else {
-						return;
 					}
+					this.nextTurn();
 				}				
 			};
 
-			api.updateHUD = function (data) {
-				$('#runs').text(data.runs);
-				$('#melds').text(data.melds);
+			api.updateHUD = function (data, meld_cards, run_cards) {
+				$('#runs').text('');
+				$('#melds').text('');
+				$('#deadwood').text('');
+
+				var deadwood_calculator = 0;
+				if (data) {
+					data.forEach(function (card) {
+						if (card.valueSet === 'run' && run_cards.length === Control_Panel.run_threshold) {
+							$('#runs').append('<img class="player_sets" src="' + card.image + '" />');
+						} else if (card.valueSet === 'meld' && meld_cards.length === Control_Panel.meld_threshold) {
+							$('#melds').append('<img class="player_sets" src="' + card.image + '" />');
+						} else {
+							deadwood_calculator += +card.value;
+							$('#deadwood').append('<img class="player_sets" src="' + card.image + '" />');
+						}
+					});
+				}
+				$('.total').text(deadwood_calculator);
 			};
 
 			/*
@@ -264,8 +287,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 				Promise.all(promises).then(function(){
 					this.addToDiscardDeck(function () {
 						this.setState('get_card');
-						this.calculate(this.current_player, null);
-						this.nextTurn();
+						this.checkStatus(this.calculate(this.current_player, null), true);
 					});
 				}.bind(this));							
 			};
@@ -454,7 +476,12 @@ document.addEventListener("DOMContentLoaded", function(event) {
 			*/
 			api.calculate = function (player, AI_card) {
 
-				// Make shallow copy of player cards
+				/*
+					Uncomment these individually to test winning, shared set, and invalid run hands
+				*/
+				// var cards = testHand('winning_hand');
+				// var cards = testHand('shared_set');
+				// var cards = testHand('invalid_run');
 				var cards = player.getCards().slice();
 
 				// AI is evaluating the usefulness of the discard deck card
@@ -534,18 +561,16 @@ document.addEventListener("DOMContentLoaded", function(event) {
 				
 				// Set the valueSet of a card as Meld, Run, or Deadwood
 				cards.forEach(function (card) {
-					if ((meldValues.length && meldValues.indexOf(card.value.toString()) > -1)) {
+					if ((meldValues.length && meldValues.indexOf(card.value.toString()) > -1) && card.valueSet !== 'run') {
 						card.valueSet = 'meld';
-					} else if (runs.length && runCheck(runsBySuit, card)) {
+					} else if (runs.length && runCheck(runsBySuit, card) && card.valueSet !== 'meld') {
 						card.valueSet = 'run';
 					} else {
 						card.valueSet = 'deadwood';
 					}
 				});
-				return {
-					melds : meldValues,
-					runs : runs
-				}		
+
+				return cards;
 			};
 
 			// Check if card value equals any of the values in a suit's run 
