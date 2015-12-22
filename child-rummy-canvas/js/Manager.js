@@ -210,8 +210,6 @@ document.addEventListener("DOMContentLoaded", function(event) {
 					this.updateHUD(data, meld_cards, run_cards);
 				}
 
-				console.log('checkStatus', meld_cards, run_cards);
-
 				if (meld_cards.length === Control_Panel.meld_threshold && run_cards.length === Control_Panel.run_threshold) {
 					this.current_player.points += 100;
 					$('#' + this.current_player.name + '_points').html(this.current_player.points);
