@@ -2,7 +2,7 @@
 
 Hi, I decided to make a version of Child Rummy for fun. Hope you enjoy :)
 
-![My Rummy Game!](http://i.imgur.com/cjnKlLk.png "My Rummy Game!")
+![My Rummy Game!](http://i.imgur.com/dw877bK.png "My Rummy Game!")
 
 #### Rules:
 

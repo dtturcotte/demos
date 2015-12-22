@@ -13,6 +13,13 @@ p {
     margin-bottom: 15px;
 }
 
+.build {
+    display: inline-block;
+    margin-right: 20px;
+    padding-top: 10px;
+    float: right;
+}
+
 #GameBoard {
     background-color: #303030;
     border: 1px solid black;
@@ -24,12 +31,13 @@ p {
 #Table {
     width: 1050px;
     float: left;
-    height: 783px
+    height: 783px;
+    padding-top: 10px;
 }
 
 #deal { 
     position: absolute;
-    top: 400px;
+    top: 345px;
     left: 800px;
     z-index: 10;
     border: thin solid black;
@@ -51,8 +59,12 @@ p {
     background-color: darkGray;
 }
 
-#runs, #melds, #deadwood {
+#runs, #melds {
     height: 50px;
+}
+
+#deadwood {
+    height: 110px;
 }
 
 .player_sets {
