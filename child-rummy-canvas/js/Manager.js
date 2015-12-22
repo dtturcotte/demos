@@ -209,8 +209,9 @@ document.addEventListener("DOMContentLoaded", function(event) {
 				if (this.current_player.name === 'MainPlayer') {
 					this.updateHUD(data, meld_cards, run_cards);
 				}
-
-				if (meld_cards.length === Control_Panel.meld_threshold && run_cards.length === Control_Panel.run_threshold) {
+				console.log('MELD:', meld_cards.length, Control_Panel.meld_threshold);
+				console.log('RUN:', run_cards.length, Control_Panel.run_threshold);
+				if (meld_cards.length === +Control_Panel.meld_threshold && run_cards.length === +Control_Panel.run_threshold) {
 					this.current_player.points += 100;
 					$('#' + this.current_player.name + '_points').html(this.current_player.points);
 					alert(this.current_player.name + ' has won!');
@@ -671,15 +672,15 @@ document.addEventListener("DOMContentLoaded", function(event) {
 				});
 
 				$('#run_threshold').change(function (e) {
-					Control_Panel.run_threshold = $(this).val();
+					Control_Panel.run_threshold = +$(this).val();
 				});
 
 				$('#meld_threshold').change(function (e) {
-					Control_Panel.meld_threshold = $(this).val();
+					Control_Panel.meld_threshold = +$(this).val();
 				});
 
 				$('#speed').change(function (e) {
-					Control_Panel.speed = $(this).val();
+					Control_Panel.speed = +$(this).val();
 				});
 			};
 
