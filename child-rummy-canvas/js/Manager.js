@@ -366,7 +366,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 					}
 				);
 
-				if (this.current_player.isOpponent === 'Computer') {
+				if (this.current_player.isOpponent) {
 					$('#step').html('Opponent\'s turn to draw...');
 				} else {
 					$('#step').html('Select a card from deck or discard pile.');	
@@ -388,7 +388,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 				this.current_player.cards.forEach(function (card) {
 					card.isThrowable = true;
 				}); 
-				if (this.current_player.isOpponent === 'Computer') {
+				if (this.current_player.isOpponent) {
 					$('#step').html('Opponent\'s turn to throw...');
 				} else {
 					$('#step').html('Discard a card.');
