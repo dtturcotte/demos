@@ -33,6 +33,10 @@ Player.prototype = {
 		this.cards.push(card);
 	},
 
+	setAllCards : function (array_of_cards) {
+		this.cards = array_of_cards;
+	},
+
 	getCards : function () {
 		return this.cards;
 	},

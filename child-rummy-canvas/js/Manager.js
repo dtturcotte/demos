@@ -17,7 +17,8 @@ document.addEventListener("DOMContentLoaded", function(event) {
 					show_AI_hand : false,
 					run_threshold : 4,
 					meld_threshold : 3,
-					speed : 1000
+					speed : 1000,
+					test_hand : 'normal_hand'
 				};
 
 			api.init = function () {
@@ -25,14 +26,14 @@ document.addEventListener("DOMContentLoaded", function(event) {
 				this.deal_count = 7;
 
 				// Initialize handler for Game
-				this.initializeHandlers();
+				initializeHandlers();
 
 				this.state = null;
 				this.discard_deck = [];
 				this.deck = shuffleDeck(createDeck());
 				this.players = createPlayers();
-				this.current_player = this.players.player;
-
+				// this.current_player = this.players.player;
+				this.current_player = this.players.cpu;
 				// For animations: Store the location of the thrown card so it can be replaced on next draw:
 				this.space_player = null;
 				this.space_cpu = null;
@@ -250,14 +251,40 @@ document.addEventListener("DOMContentLoaded", function(event) {
 				var that = this,
 					promises = [];
 
+				// Allow player to test certain hands
+				if (Control_Panel.test_hand !== 'normal_hand') {
+					var hash = {};
+					var key = function (card) { 
+						return card.suit + '-' + card.value; 
+					};
+					testHand(Control_Panel.test_hand).forEach(function (test_card) { 
+						hash[key(test_card)] = true; 
+					});
+
+					this.players.player.setAllCards(this.deck.filter(function (deck_card) { 
+						return hash[key(deck_card)]; 
+					}));
+
+					this.deck = this.deck.filter(function (deck_card) { 
+						return !hash[key(deck_card)]; 
+					}.bind(this));
+				}
 				for (var player in this.players) {
 					if (this.players.hasOwnProperty(player)) {
-						// Deal each player cards from top of stack
-						for (var i = this.deal_count; i > 0; i--) {
-							var card = this.deck.pop();
-							card.current_deck = 'in_' + this.players[player].name +'_hand';
-							this.players[player].setCards(card);
+						// Deal each player cards from top of stack. If setting hand manually, do not re-deal to player
+						if (Control_Panel.test_hand !== 'normal_hand' && this.players[player].name === 'MainPlayer') {
+							console.log('Pre-selected player hand. Skipping dealing to player.');
+							this.players[player].getCards().forEach(function (card) {
+								card.current_deck = 'in_' + this.players[player].name +'_hand';
+							}.bind(this));
+						} else {
+							for (var i = this.deal_count; i > 0; i--) {
+								var card = this.deck.pop();
+								card.current_deck = 'in_' + this.players[player].name +'_hand';
+								this.players[player].setCards(card);
+							}
 						}
+						
 						// "Deal" the cards. Animate them and reveal face as needed		
 						var player_clone = jQuery.extend({}, this.players[player]);
 
@@ -338,7 +365,12 @@ document.addEventListener("DOMContentLoaded", function(event) {
 						transform: 't10, -10'
 					}
 				);
-				$('#step').html('Select a card from deck or discard pile.');	
+
+				if (this.current_player.isOpponent === 'Computer') {
+					$('#step').html('Opponent\'s turn to draw...');
+				} else {
+					$('#step').html('Select a card from deck or discard pile.');	
+				}
 			};
 
 			/*
@@ -356,8 +388,11 @@ document.addEventListener("DOMContentLoaded", function(event) {
 				this.current_player.cards.forEach(function (card) {
 					card.isThrowable = true;
 				}); 
-
-				$('#step').html('Discard a card.');
+				if (this.current_player.isOpponent === 'Computer') {
+					$('#step').html('Opponent\'s turn to throw...');
+				} else {
+					$('#step').html('Discard a card.');
+				}
 			};
 
 			/*
@@ -432,7 +467,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 					var run_cards = this.current_player.getCards().filter(function (card) {
 						return card.valueSet === 'run';
 					});	
-			
+
 					// Check if melds and runs have been satisfied, or if deadwood. If so, throw extras and make room for more. 
 					if (meld_cards.length > Control_Panel.meld_threshold) {
 						var rand = Math.floor(Math.random() * (meld_cards.length-1 - 0)) + 0;
@@ -473,12 +508,6 @@ document.addEventListener("DOMContentLoaded", function(event) {
 			*/
 			api.calculate = function (player, AI_card) {
 
-				/*
-					Uncomment these individually to test winning, shared set, and invalid run hands
-				*/
-				// var cards = testHand('winning_hand');
-				// var cards = testHand('shared_set');
-				// var cards = testHand('invalid_run');
 				var cards = player.getCards().slice();
 
 				// AI is evaluating the usefulness of the discard deck card
@@ -558,10 +587,10 @@ document.addEventListener("DOMContentLoaded", function(event) {
 				
 				// Set the valueSet of a card as Meld, Run, or Deadwood
 				cards.forEach(function (card) {
-					if ((meldValues.length && meldValues.indexOf(card.value.toString()) > -1) && card.valueSet !== 'run') {
-						card.valueSet = 'meld';
-					} else if (runs.length && runCheck(runsBySuit, card) && card.valueSet !== 'meld') {
+					if (runs.length && runCheck(runsBySuit, card) && card.valueSet !== 'meld') {
 						card.valueSet = 'run';
+					} else if ((meldValues.length && meldValues.indexOf(card.value.toString()) > -1) && card.valueSet !== 'run') {
+						card.valueSet = 'meld';
 					} else {
 						card.valueSet = 'deadwood';
 					}
@@ -573,12 +602,11 @@ document.addEventListener("DOMContentLoaded", function(event) {
 			// Check if card value equals any of the values in a suit's run 
 			function runCheck (run_values_by_suit, card) {
 				for (var suit in run_values_by_suit) {
-					return (run_values_by_suit[suit].indexOf(card.value) !== -1);
+					return (run_values_by_suit[suit].indexOf(+card.value) !== -1 && suit === card.suit);
 				}
 			}
 
 			function createPlayers () {
-
 				var player = new Player(table.tableCanvas, {
 					id : 1,
 					x : ((table.w/2)-50),
@@ -603,7 +631,6 @@ document.addEventListener("DOMContentLoaded", function(event) {
 					player : player,
 					cpu : computer
 				}
-
 			};			
 
 			function createDeck () {
@@ -633,7 +660,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 				return deck;
 			};
 
-			api.initializeHandlers = function() {
+			function initializeHandlers () {
 
 				$('#deal').click(function (e) {
 					$(this).hide();
@@ -680,6 +707,10 @@ document.addEventListener("DOMContentLoaded", function(event) {
 				$('#speed').change(function (e) {
 					Control_Panel.speed = +$(this).val();
 				});
+
+				$('#test_hand').change(function (e) {
+					Control_Panel.test_hand = $(this).val();
+				});
 			};
 
 			function shuffleDeck (array) {
@@ -716,7 +747,6 @@ document.addEventListener("DOMContentLoaded", function(event) {
 					name : name,
 					image : image
 				};
-
 			};
 
 			// expose API
