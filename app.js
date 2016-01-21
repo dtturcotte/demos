@@ -1,8 +1,7 @@
 var express = require('express');
 var bodyParser = require('body-parser');
-
-var dantebot = require('./slash-dev-dan/dantebot');
-var suki = require('./slash-dev-dan/suki');
+var dantebot = require('./dantebot');
+var suki = require('./suki');
 
 var app = express();
 var port = process.env.PORT || 4000;
