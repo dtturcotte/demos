@@ -1,6 +1,9 @@
 var express = require('express');
 var bodyParser = require('body-parser');
 
+var dantebot = require('./slash-dev-dan/dantebot');
+var suki = require('./slash-dev-dan/suki');
+
 var app = express();
 var port = process.env.PORT || 4000;
 
@@ -11,6 +14,11 @@ app.use(express.static('.'));
 app.get('/', function (req, res) {
 	res.status(200).sendFile('/index.html');
 });
+
+app.post('/sdc', dantebot);
+app.get('/sdc', dantebot);
+app.post('/suki', suki);
+app.get('/suki', suki);
 
 // error handler
 app.use(function (err, req, res, next) {
