@@ -11,8 +11,10 @@
   "dependencies": {
     "body-parser": "^1.x.x",
     "express": "^4.13.1",
-    "gulp": "^3.9.0",
-    "gulp-nodemon": "^2.0.4",
     "request": "^2.60.0"
+  },
+  "dev-dependencies": {
+    "gulp-nodemon": "^2.0.4",
+    "gulp": "^3.9.0"
   }
 }
