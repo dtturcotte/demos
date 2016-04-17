@@ -245,6 +245,8 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
 			var self = this;
 
+			console.log('TEST', args.content.id);
+
 			switch (action.verbs[0]) {
 				case 'read':
 					read();
@@ -269,6 +271,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 			function read() {
 				var $contentObject = $('.article').find('#'+args.content.id);
 				self.checkState($contentObject);
+				console.log('NATIVE', args);
 				Utilities.STT.native(args);
 				clearError();
 			};

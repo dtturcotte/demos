@@ -7,6 +7,8 @@ module.exports = function (req, res, next) {
 	botPayload.text = 'AH AH AH, YOU DIDN\'T SAY THE MAGIC WORD!';
 	botPayload.channel = req.body.channel_id;
 
+	//return res.status(200).send('dante is losssaded');
+
 	if (typeof req.body.text !== 'undefined') {
 		botPayload.userToGet = req.body.text.split('^')[0];
 
@@ -63,7 +65,7 @@ function postToSlack (payload, callback) {
 
 function getUserData (payload, callback) {
 	request({
-		uri: 'https://slack.com/api/users.list?token=xoxp-2697721554-7445793969-8170611990-31095b&pretty=1',
+		uri: 'https://slack.com/api/users.list?token=xoxp-2697721554-7445793969-19098479429-9e38e4b0b1&pretty=1',
 		method: 'GET',
 		body: JSON.stringify(payload)
 	}, function (error, response, body) {

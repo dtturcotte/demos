@@ -108,6 +108,8 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
 				var lang = (object.language) ? object.language.code : 'en-us';
 
+				console.log('LANG', lang);
+
 				switch (lang) {
 					case 'es':
 						lang = 'es-CO';
@@ -126,12 +128,17 @@ document.addEventListener("DOMContentLoaded", function(event) {
 						break;
 				}
 
+				console.log('LANG 2', lang);
+
 				utterance.lang = lang;
 
 				var text_to_narrate = $.grep(object.content.content, function (obj) {
+
+					console.log('test', obj, object);
 					return obj.code.toLowerCase() === object.language.code;
 				});
 
+				console.log('TEXT TO ', text_to_narrate);
 				utterance.text = text_to_narrate[0].text;
 
 				utterance.onend = function (e) {
