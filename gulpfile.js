@@ -12,7 +12,7 @@ gulp.task('css', function() {
 		.pipe(sass({style: 'compressed'}))
 		.pipe(autoprefixer('last 10 version'))
 		.pipe(minifycss())
-		.pipe(gulp.dest('public/css'));
+		.pipe(gulp.dest('static/css'));
 });
 
 gulp.task('serve', function () {
