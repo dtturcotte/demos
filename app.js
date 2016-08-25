@@ -4,7 +4,7 @@ var dantebot = require('./slack_bots/dantebot');
 var suki = require('./slack_bots/suki');
 
 var app = express();
-var port = process.env.PORT || 4000;
+var port = process.env.PORT || 9000;
 
 // body parser middleware
 app.use(bodyParser.urlencoded({ extended: true }));

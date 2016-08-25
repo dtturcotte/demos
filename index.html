@@ -3,38 +3,71 @@
 		<title>dante's demos</title>
 		<style>
 			body {
-				font-family: "Comic Sans MS", cursive, sans-serif;
-				background-image: url("stars.bmp");
+				background-color: #E8E8E8;
 			}
-			li {
-				color: red;
+
+			.section {
+				width: 100%;
 			}
-			li:hover {
-				color: white;
+
+			.project {
+				display: inline-block;
+				vertical-align: top;
+				position: relative;
+				-webkit-transition: width .5s,height .5s,background-color .5s,color .5s,-webkit-transform .5s;
+				transition: width .5s,height .5s,background-color .5s,color .5s,transform .5s;
+				height: 200px;
+				width: 28%;
+				border-radius: 2%;
+				margin: 15px;
+				background-color: #fff;
+				padding: 15px;
+				background-image: -webkit-radial-gradient(#fff,#dadada);
+				background-image: radial-gradient(#fff,#dadada);
 			}
-			h1 {
-				color: yellow;
-			}
-			h2 {
-				color: green;
-			}
+
 		</style>
+		<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,700' rel='stylesheet' type='text/css'>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+
+		<script>
+
+			$(document).ready(function () {
+
+				$.getJSON("./data/projects.json", function(json) {
+					if (json) {
+						json.forEach(function (p) {
+							var $project = $('<div class="project">');
+							$project.on('click', function () {
+								console.log('project ' + p.name + ' clicked');
+							});
+							$project.html(p.name);
+							$('#projects').append($project);
+
+						});
+					}
+				});
+
+			});
+		</script>
 	</head>
 	<body>	
-		<h1> Dante's Demos </h1>
+		<h1> Daniel T. Turcotte </h1>
 
 		<h2>Pick One</h2>
 
-		<ul>
-			<a href="speech-api/index.html">
-				<li>Speech Recognition</li>
-			</a>
-			<a href="raphael-js/index.html">
-				<li>Raphael JS</li>
-			</a>
-			<a href="child-rummy-canvas/index.html">
-				<li>Child Rummy</li>
-			</a>
-		</ul>
+		<div id="projects"></div>
+
+		<!--<ul>-->
+			<!--<a href="speech-api/index.html">-->
+				<!--<li>Speech Recognition</li>-->
+			<!--</a>-->
+			<!--<a href="raphael-js/index.html">-->
+				<!--<li>Raphael JS</li>-->
+			<!--</a>-->
+			<!--<a href="child-rummy-canvas/index.html">-->
+				<!--<li>Child Rummy</li>-->
+			<!--</a>-->
+		<!--</ul>-->
 	</body>
 </html>
