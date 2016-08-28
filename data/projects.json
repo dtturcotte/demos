@@ -16,7 +16,7 @@
     "name" : "Hitting Trees with Sticks",
     "about" : "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.",
     "image" : "http://i.imgur.com/Z4BUKkY.png",
-    "link" : "speech-api/index.html",
+    "link" : "http://www.hittingtreeswithsticks.com",
     "tags" : [
       "freelance",
       "web app",
@@ -26,10 +26,10 @@
     "color" : "white"
   },
   {
-    "name" : "Viewers to Volunteers",
+    "name" : "Rummy",
     "about" : "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.",
     "image" : "",
-    "link" : "speech-api/index.html",
+    "link" : "child-rummy-canvas/index.htm",
     "tags" : [
       "freelance",
       "web app",
@@ -39,10 +39,10 @@
     "color" : "black"
   },
   {
-    "name" : "Viewers to Volunteers",
+    "name" : "Algorithms",
     "about" : "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.",
     "image" : "",
-    "link" : "speech-api/index.html",
+    "link" : "raphael-js/index.html",
     "tags" : [
       "freelance",
       "web app",

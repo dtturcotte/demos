@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+        <% include ./partials/head %>
+	</head>
+	<body>
+		<div class="app-wrapper">
+			<header>
+                <% include ./partials/header %>
+            </header>
+            <div class="full-section lg black">
+
+            </div>
+            <div class="full-section sm white">
+                <% include ./partials/tags %>
+            </div>
+			<section class="content">
+				<div class="home">
+                    <div class="projects">
+                        <% for(var i=0; i < data.length; i++) { %>
+                            <div class="project">
+                                <div class="info">
+                                    <a href="<%= data[i].link %>" target="_blank"><p class="title"><%= data[i].name %></p></a>
+                                </div>
+                                <img src="<%= data[i].image %>"/>
+                            </div>
+                        <% } %>
+                    </div>
+				</div>
+			</section>
+
+            <footer>
+                <% include ./partials/footer %>
+            </footer>
+		</div>
+	</body>
+</html>
