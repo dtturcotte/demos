@@ -1,5 +1,6 @@
 [
   {
+    "id" : 1,
     "name" : "Dynamic Dental Edu.",
     "about" : "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.",
     "image" : "http://i.imgur.com/BZDibXh.png",
@@ -7,46 +8,94 @@
     "tags" : [
       "freelance",
       "web app",
-      "angular js"
+      "angular",
+      "featured"
     ],
     "background-color" : "#00b8f1",
     "color" : "white"
   },
   {
+    "id" : 2,
     "name" : "Hitting Trees with Sticks",
     "about" : "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.",
     "image" : "http://i.imgur.com/Z4BUKkY.png",
     "link" : "http://www.hittingtreeswithsticks.com",
     "tags" : [
-      "freelance",
-      "web app",
-      "angular js"
+      "angular"
     ],
     "background-color" : "#b83325",
     "color" : "white"
   },
   {
+    "id" : 3,
     "name" : "Rummy",
     "about" : "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.",
-    "image" : "",
+    "image" : "http://i.imgur.com/BZDibXh.png",
     "link" : "child-rummy-canvas/index.htm",
     "tags" : [
-      "freelance",
-      "web app",
-      "angular js"
+      "angular"
     ],
     "background-color" : "#deffff",
     "color" : "black"
   },
   {
+    "id" : 4,
     "name" : "Algorithms",
     "about" : "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.",
-    "image" : "",
+    "image" : "http://i.imgur.com/BZDibXh.png",
     "link" : "raphael-js/index.html",
+    "tags" : [
+      "freelance"
+    ],
+    "background-color" : "#f79f23",
+    "color" : "white"
+  },
+  {
+    "id" : 5,
+    "name" : "Dynamic Dental Edu.",
+    "about" : "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.",
+    "image" : "http://i.imgur.com/BZDibXh.png",
+    "link" : "speech-api/index.html",
     "tags" : [
       "freelance",
       "web app",
-      "angular js"
+      "angular"
+    ],
+    "background-color" : "#00b8f1",
+    "color" : "white"
+  },
+  {
+    "id" : 6,
+    "name" : "Hitting Trees with Sticks",
+    "about" : "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.",
+    "image" : "http://i.imgur.com/Z4BUKkY.png",
+    "link" : "http://www.hittingtreeswithsticks.com",
+    "tags" : [
+      "angular"
+    ],
+    "background-color" : "#b83325",
+    "color" : "white"
+  },
+  {
+    "id" : 7,
+    "name" : "Rummy",
+    "about" : "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.",
+    "image" : "http://i.imgur.com/BZDibXh.png",
+    "link" : "child-rummy-canvas/index.htm",
+    "tags" : [
+      "angular"
+    ],
+    "background-color" : "#deffff",
+    "color" : "black"
+  },
+  {
+    "id" : 8,
+    "name" : "Algorithms",
+    "about" : "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.",
+    "image" : "http://i.imgur.com/BZDibXh.png",
+    "link" : "raphael-js/index.html",
+    "tags" : [
+      "freelance"
     ],
     "background-color" : "#f79f23",
     "color" : "white"

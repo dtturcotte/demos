@@ -1,0 +1,38 @@
+.tags {
+  width: 50%;
+  margin: 0 auto;
+  text-align: center;
+  .tag {
+    background-color: green;
+    display: inline-block;
+    padding: 5px;
+    margin: 5px;
+    border-radius: 3px;
+    background-color: rgba(228, 225, 220,.7);
+    border: thin solid #c3c3c3;
+    -webkit-transition: width .5s, height .5s, background-color .5s, color .5s, -webkit-transform .5s;
+    transition: width .5s, height .5s, background-color .5s, color .5s, transform .5s;
+    span {
+      margin-top: 3px;
+      display: inline-block;
+    }
+    img {
+      border: none;
+      opacity: 1;
+      width: 25px;
+      height: 25px;
+      vertical-align: top;
+      padding-right: 4px;
+      margin-top: -2px;
+      box-sizing: content-box !important;
+    }
+    &:hover {
+      background-color: rgba(204, 201, 196, 0.70);
+      cursor: pointer;
+    }
+    &.clicked {
+      background-color: rgba(81, 228, 77, 0.70);;
+      border-color: #4abd2c;
+    }
+  }
+}

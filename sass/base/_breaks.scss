@@ -1,0 +1,71 @@
+/*
+ * Mixin for inlining responsive breakpoints
+ *
+ */
+
+
+// Determine whether the variable supplied is a number
+
+@function is-number($var) {
+	@if type-of($var) == number {
+		@return unitless($var);
+	} @else {
+		@return false;
+	}
+}
+
+
+@mixin break($point, $type: 'min') {
+
+
+	@if $point == handset-xsm {
+		@media only screen and (max-width: 375px)  { @content ; }
+	}
+
+	@else if $point == handset-sm {
+		@media only screen and (max-width: 320px)  { @content ; }
+	}
+
+	@else if $point == handset-md {
+		@media only screen and (max-width: 437px)  { @content ; }
+	}
+
+	@else if $point == handset {
+		@media only screen and (max-width: 480px)  { @content ; }
+	}
+  @else if $point == tabletmax {
+    @media only screen and (max-width: 767px) { @content ; }
+  }
+  @else if $point == laptopmax {
+    @media only screen and (max-width: 1024px) { @content ; }
+  }
+  @else if $point == desktopmax {
+    @media only screen and (max-width: 1280px ) { @content ; }
+  }
+
+	// Target tablets and up
+
+	@else if $point == tablet {
+		@media only screen and (min-width: 767px) { @content ; }
+	}
+
+	// Target laptops and up
+
+	@else if $point == laptop {
+		@media only screen and (min-width: 1024px) { @content ; }
+	}
+
+	// Target desktops and up
+
+	@else if $point == desktop {
+		@media only screen and (min-width: 1280px ) { @content ; }
+	}
+
+	// Create custom query on the fly
+
+	@else if is-number($point) {
+	  @media only screen and (#{$type}-width: #{$point}px) {
+		@content;
+	  }
+	}
+}

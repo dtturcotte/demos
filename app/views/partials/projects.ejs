@@ -1,0 +1,21 @@
+<div class="projects">
+    <% for(var i=0; i < data.length; i++) { %>
+        <a href="<%= data[i].link %>" target="_blank">
+            <div class="project">
+                <div class="info">
+                    <p class="title"><%= data[i].name %></p>
+
+                    <% for(var j=0; j < data[i].tags.length; j++) { %>
+                        
+                        HEY <img src="<%= static.tags[data[i].tags[j]] %>"/>
+                    <% } %>
+
+                    <p><%= data[i].about %></p>
+                </div>
+                <div class="images">
+                    <img src="<%= data[i].image %>"/>
+                </div>
+            </div>
+        </a>
+    <% } %>
+</div>

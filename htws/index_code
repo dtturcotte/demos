@@ -1,0 +1,140 @@
+<?php
+/*Index page: directs you to appropriate template based on URL action parameter*/
+include './config.php';
+$action = isset($_GET['action']) ? $_GET['action'] : "";
+
+switch($action) {	
+	case 'allimages':
+		allimages();
+		break;
+	case 'viewimage':
+		viewimage();
+		break;
+	case 'about':
+		about();
+		break;
+	case 'terms':
+		terms();
+		break;
+	case 'admin_login':
+		admin_login();
+		break;
+	case 'login':
+		mylogin();
+		break;
+	case 'admin':
+		admin();
+		break;
+	case 'playground' :
+		playground();
+		break;
+	case 'test_game' :
+		test_game();
+		break;		
+	case 'jill' :
+		jill();
+		break;
+	case 'jillpractices' :
+		jillpractices();
+		break;
+	case 'jillabout' :
+		jillabout();
+		break;
+	case 'jillcontact' :
+		jillcontact();
+		break;
+    case 'personalpage' :
+		personalpage();
+		break;
+	default:
+		homepage();
+}
+
+function personalpage() {
+    include './php/dbconnect.php';
+    
+    $limit = isset($_GET['limit']) ? $_GET['limit'] : 10;
+    $mw = isset($_GET['mw']) ? $_GET['mw'] : 100;
+    $mh = isset($_GET['mh']) ? $_GET['mh'] : 100;
+    $site = isset($_GET['site']) ? $_GET['site'] : "comics";
+    
+    $thumbpaths = array(
+      'comics' => "../images/Comics/ComicThumbnails/",
+      'artwork' => "../images/Artwork/ArtThumbnails/"
+    );
+    
+    $thumbpath = ($site == 'comics') ? $thumbpaths['comics'] : $thumbpaths['artwork'];
+    $images = array();    
+    
+    $sql = "SELECT id, number, title, path, thumb, views, date, catidFK FROM $site ORDER BY RAND() DESC LIMIT $limit";
+
+    $imgpath = $mysqli->query($sql) or trigger_error($mysqli->error.$sql);    
+    
+     mysqli_close($mysqli);
+     
+     while ($row = $imgpath->fetch_assoc()) { 
+        array_push($images, '
+            <a href="http://hittingtreeswithsticks.com?action=viewimage&site='.$site.'&id=' . $row['id'] . '&cat='.$cat.'">
+                <img src="http://hittingtreeswithsticks.com/php/thumber.php?img=' . $thumbpath . $row['thumb'] . '&mw=' . $mw . '&mh=' . $mh . '"/>
+            </a>'
+            );
+     }	
+     
+   // callback the anonymous JSONP request with the data
+   echo $_GET['callback'] . '(' . json_encode($images) . ')';
+}
+
+function allimages() {
+	require(TEMPLATE_PATH . "/allimages.php");
+}
+
+function viewimage() {
+	require(TEMPLATE_PATH . "/viewimage.php");
+}
+
+function about() {
+	require(TEMPLATE_PATH . "/about.php");
+}
+
+function terms() {
+	require(TEMPLATE_PATH . "/terms.php");
+}
+
+function admin_login() {
+	require(TEMPLATE_PATH . "/admin_login.php");
+}
+
+function mylogin() {
+	require(TEMPLATE_PATH . "/login.php");
+}
+
+function admin() {
+	require(TEMPLATE_PATH . "/admin.php");
+}
+
+function jill() {
+	require("./Jill/businessfrontpage/templates/homepage.php");
+}
+function jillpractices() {
+	require("./Jill/businessfrontpage/templates/practices.php");
+}
+function jillabout() {
+	require("./Jill/businessfrontpage/templates/about.php");
+}
+function jillcontact() {
+	require("./Jill/businessfrontpage/templates/contact.php");
+}
+
+function playground() {
+	require("./playground/playground.php");
+}
+
+function test_game() {
+	require("./test_game/chinesegame.php");
+}
+
+function homepage() {
+	require(TEMPLATE_PATH . "/homepage.php");
+}
+
+?>
