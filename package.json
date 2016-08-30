@@ -22,7 +22,8 @@
     "gulp-minify-css": "^1.2.0",
     "gulp-nodemon": "^2.0.4",
     "gulp-sass": "^2.0.4",
-    "isotope-layout": "^3.0.1"
+    "isotope-layout": "^3.0.1",
+    "request": "^2.74.0"
   },
   "devDependencies": {
     "gulp-nodemon": "^2.0.4",
