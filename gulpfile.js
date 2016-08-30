@@ -25,7 +25,11 @@ gulp.task('serve', function () {
 
 gulp.task('build', function() {
 	gulp.run('css');
-	//gulp.run('serve');
+});
+
+gulp.task('build-dev', function() {
+	gulp.run('css');
+	gulp.run('serve');
 	gulp.watch('sass/**/*.scss', function() {
 		gulp.run('css');
 	});
