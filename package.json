@@ -4,7 +4,9 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "gulp": "gulp",
+    "start": "gulp build && node app.js"
   },
   "author": "",
   "license": "ISC",
@@ -18,7 +20,7 @@
     "gulp-sass": "^2.0.4",
     "isotope-layout": "^3.0.1"
   },
-  "dev-dependencies": {
+  "devDependencies": {
     "gulp-nodemon": "^2.0.4",
     "gulp": "^3.9.0"
   }
