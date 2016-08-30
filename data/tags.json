@@ -1,58 +1,139 @@
 [
   {
     "name" : "featured",
-    "icon" : "../data/assets/featured.png"
+    "type" : "category",
+    "icon" : "../data/assets/featured.png",
+    "colors" : {
+      "background" : "rgba(255, 99, 132, 0.2)",
+      "border" : "rgba(255,99,132,1)"
+    }
   },
   {
     "name" : "games",
-    "icon" : "../data/assets/games.png"
+    "type" : "category",
+    "icon" : "../data/assets/games.png",
+    "colors" : {
+      "background" : "rgba(255, 99, 132, 0.2)",
+      "border" : "rgba(255,99,132,1)"
+    }
   },
   {
     "name" : "iot",
-    "icon" : "../data/assets/iot.png"
+    "type" : "category",
+    "icon" : "../data/assets/iot.png",
+    "colors" : {
+      "background" : "rgba(255, 99, 132, 0.2)",
+      "border" : "rgba(255,99,132,1)"
+    }
   },
   {
     "name" : "angular",
-    "icon" : "../data/assets/angular.png"
+    "type" : "skill",
+    "icon" : "../data/assets/angular.png",
+    "strength" : 9,
+    "colors" : {
+      "background" : "rgba(255, 99, 132, 0.2)",
+      "border" : "rgba(255,99,132,1)"
+    }
   },
   {
     "name" : "javascript",
-    "icon" : "../data/assets/javascript.png"
+    "type" : "skill",
+    "icon" : "../data/assets/javascript.png",
+    "strength" : 8,
+    "colors" : {
+      "background" : "rgba(54, 162, 235, 0.2)",
+      "border" : "rgba(54, 162, 235, 1)"
+    }
   },
   {
     "name" : "node",
-    "icon" : "../data/assets/nodejs.png"
+    "type" : "skill",
+    "icon" : "../data/assets/nodejs.png",
+    "strength" : 6,
+    "colors" : {
+      "background" : "rgba(255, 206, 86, 0.2)",
+      "border" : "rgba(255, 206, 86, 1)"
+    }
   },
   {
     "name" : "python",
-    "icon" : "../data/assets/python.png"
+    "type" : "skill",
+    "icon" : "../data/assets/python.png",
+    "strength" : 2,
+    "colors" : {
+      "background" : "rgba(153, 102, 255, 0.2)",
+      "border" : "rgba(153, 102, 255, 1)"
+    }
   },
   {
     "name" : "sass",
-    "icon" : "../data/assets/sass.png"
+    "type" : "skill",
+    "icon" : "../data/assets/sass.png",
+    "strength" : 7,
+    "colors" : {
+      "background" : "rgba(255, 159, 64, 0.2)",
+      "border" : "rgba(255, 159, 64, 1)"
+    }
   },
   {
     "name" : "react",
-    "icon" : "../data/assets/react.png"
+    "type" : "skill",
+    "icon" : "../data/assets/react.png",
+    "strength" : 6,
+    "colors" : {
+      "background" : "rgba(200, 99, 132, 0.2)",
+      "border" : "rgba(200,99,132,1)"
+    }
   },
   {
     "name" : "php",
-    "icon" : "../data/assets/php.png"
+    "type" : "skill",
+    "icon" : "../data/assets/php.png",
+    "strength" : 7,
+    "colors" : {
+      "background" : "rgba(100, 162, 235, 0.2)",
+      "border" : "rgba(100, 162, 235, 1)"
+    }
   },
   {
     "name" : "laravel",
-    "icon" : "../data/assets/laravel.png"
+    "type" : "skill",
+    "icon" : "../data/assets/laravel.png",
+    "strength" : 8,
+    "colors" : {
+      "background" : "rgba(255, 206, 86, 0.2)",
+      "border" : "rgba(255, 206, 86, 1)"
+    }
   },
   {
     "name" : "mysql",
-    "icon" : "../data/assets/mysql.png"
+    "type" : "skill",
+    "icon" : "../data/assets/mysql.png",
+    "strength" : 6,
+    "colors" : {
+      "background" : "rgba(153, 102, 255, 0.2)",
+      "border" : "rgba(153, 102, 255, 1)"
+    }
   },
   {
     "name" : "nosql",
-    "icon" : "../data/assets/mongo.png"
+    "type" : "skill",
+    "icon" : "../data/assets/mongo.png",
+    "strength" : 5,
+    "colors" : {
+      "background" : "rgba(54, 162, 235, 0.2)",
+      "border" : "rgba(54, 162, 235, 1)"
+    }
   },
   {
     "name" : "django",
-    "icon" : "../data/assets/django.png"
+    "type" : "skill",
+    "icon" : "../data/assets/django.png",
+    "strength" : 1,
+    "colors" : {
+      "background" : "rgba(255, 99, 132, 0.2)",
+      "border" : "rgba(255,99,132,1)"
+    }
   }
 ]

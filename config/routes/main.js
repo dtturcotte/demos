@@ -2,6 +2,7 @@ module.exports = function (app, globals, path) {
 
 	var home = require(path.join(globals.paths.controllers, 'home.controller'));
 	var about = require(path.join(globals.paths.controllers, 'about.controller'));
+	var skills = require(path.join(globals.paths.controllers, 'skills.controller'));
 
 	var dantebot = require('../../slack_bots/dantebot');
 	var suki = require('../../slack_bots/suki');
@@ -25,6 +26,7 @@ module.exports = function (app, globals, path) {
 	app.post('/projects', home.projects);
 	app.post('/tags', home.tags);
 	app.get('/about', about.stuff);
+	app.get('/skills', skills.index);
 
 	/*
 		Slack Bots

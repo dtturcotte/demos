@@ -1,0 +1,44 @@
+.skills {
+  .content-blocks {
+    margin-bottom: 40px;
+    display: inline-block;
+    .content-block {
+      display: inline-block;
+      &.left {
+        width: 25%;
+        float: left;
+        text-align: right;
+        vertical-align: top;
+        line-height: 1.8;
+        margin-top: 2%;
+      }
+      &.right {
+        width: 72%;
+        float: right;
+        box-shadow: 1px 1px 12px 1px rgba(1, 1, 1, 0.1);
+        img {
+          width: 100%;
+        }
+      }
+    }
+  }
+  .art-image {
+    position: absolute;
+    bottom: -5px;
+    right: 0;
+    opacity: .3;
+    transition: opacity 1s, transform .5s;
+    &:hover {
+      opacity: .4;
+    }
+    img {
+      width: 665px;
+    }
+  }
+  .chinese{
+    &.large {
+      font-size: 60px;
+      line-height: 0;
+    }
+  }
+}

@@ -29,17 +29,21 @@ body {
   }
 }
 
-p {
-  &.link {
-    color: blue;
-    &:hover {
-      color: #5a73ff;
-      cursor: pointer;
-    }
+.link {
+  color: blue;
+  &:hover {
+    color: #5a73ff;
+    cursor: pointer;
   }
+}
+
+p {
   &.heading {
     font-size: 20px;
     display: inline-block;
+    &.block {
+      display: block;
+    }
     &.nav {
       margin-top: 14px;
     }
@@ -55,11 +59,17 @@ a {
   text-decoration: none !important;
   color: inherit;
 }
+.box-shadow {
+  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+}
 
 .text-shadow {
   text-shadow: 0 2px 4px rgba(0,0,0,.3);
   &.dark {
     text-shadow: 0 2px 4px rgba(0,0,0,1);
+  }
+  &.light {
+    text-shadow: 1px 1px 3px rgba(0,0,0,.2)
   }
 }
 .clear {
@@ -80,9 +90,17 @@ h1, h2, h3, h4 {
   display: inline-block;
   box-sizing: border-box;
   position: relative;
+  color: black;
   &.black {
     background-image: radial-gradient(#474548, #2a282b);
     color: white;
+  }
+  &.dark-black {
+    background-image: radial-gradient(#1d1b1e, #09070a);
+    color: white;
+  }
+  &.light {
+    background-image: radial-gradient(#fdfdfd,#bbb);
   }
   &.white {
     background-color: white;
@@ -92,6 +110,16 @@ h1, h2, h3, h4 {
   }
   &.purple {
     background-image: radial-gradient(#7e81e6,#393279);
+  }
+  &.dark-red {
+    color: white;
+    background-image: radial-gradient(#331f1f,#000000);
+    border-bottom: thin solid #6d0604;
+    &.cn-img {
+      background-image: url(/data/assets/cn_backdrop.jpg);
+      background-position: bottom center;
+      background-size: cover;
+    }
   }
   &.lg {
     padding: 60px 0;

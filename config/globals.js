@@ -5,10 +5,24 @@ module.exports = {
 		build: 'build'
 	},
 	static : {
+		author : 'daniel turcotte',
 		nav: [
-			'me',
-			'work',
-			'contact'
+			{
+				display : 'work',
+				link : '/'
+			},
+			{
+				display : 'skills',
+				link : '/skills'
+			},
+			{
+				display : 'about',
+				link : '/about'
+			},
+			{
+				display : 'contact',
+				link : '/contact'
+			}
 		]
 	}
 };

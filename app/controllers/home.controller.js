@@ -1,5 +1,4 @@
 
-var fs = require("fs");
 var projects = require('../../data/projects.json');
 var tags = require('../../data/tags.json');
 
@@ -7,7 +6,7 @@ var getProjects = function (tags) {
 
 	var results = (tags) ? [] : projects;
 	var ids = [];
-	
+
 	projects.forEach(function (p) {
 		for (var i = 0; i < tags.length; i++) {
 			if (p.tags.indexOf(tags[i]) > -1 && ids.indexOf(p.id) === -1) {

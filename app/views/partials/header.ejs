@@ -1,11 +1,13 @@
 <div class="header">
     <section class="content">
-        <p class="heading nav"> daniel turcotte </p>
+        <a href="/">
+            <p class="heading nav"><%= static.author %></p>
+        </a>
 
         <div class="nav-items">
             <% for(var i=0; i < static.nav.length; i++) { %>
                 <div class="nav-item">
-                    <a href="/<%= static.nav[i] %>" class="nav-link"><%= static.nav[i] %></a>
+                    <a href="<%= static.nav[i].link %>" class="nav-link"><%= static.nav[i].display %></a>
                 </div>
             <% } %>
         </div>
