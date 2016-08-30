@@ -4,9 +4,10 @@ var projects = require('../../data/projects.json');
 var tags = require('../../data/tags.json');
 
 var getProjects = function (tags) {
-	console.log('getting projects', tags);
+
 	var results = (tags) ? [] : projects;
 	var ids = [];
+	
 	projects.forEach(function (p) {
 		for (var i = 0; i < tags.length; i++) {
 			if (p.tags.indexOf(tags[i]) > -1 && ids.indexOf(p.id) === -1) {
@@ -18,30 +19,40 @@ var getProjects = function (tags) {
 	return results;
 };
 
+var getTags = function (projects) {
+
+	var project_tags = [],
+		names = [];
+
+	projects.forEach(function (p) {
+		tags.forEach(function (t) {
+			if (p.tags.indexOf(t.name) > -1 && names.indexOf(t.name) === -1) {
+				project_tags.push(t);
+				names.push(t.name);
+			}
+		});
+	});
+
+	return project_tags;
+};
+
 module.exports = {
 
-	/**
-	 * Render page: @TODO - shouldn't need to repeat the logic in Projects
-	 * 				But the projects and tags partials require data on initial load
-	 *
-	 * @param req
-	 * @param res
+	/*
+		On initial page load...
+		- Load 5 selected projects
+		- Load tags into tags page based on the tags in these projects
 	 */
 	index : function (req, res) {
-		var tags_limit = tags.map(function (t) {
-			return t;
+		var projects_limit = projects.map(function (p) {
+			return p;
 		});
 
-		var tag_names = tags.map(function (t) {
-			return t.name;
-		});
-
-		tags_limit.length = 5;
-		tag_names.length = 5;
+		projects_limit.length = 5;
 
 		res.render('index', {
-			data : getProjects(tag_names),
-			tags : tags_limit
+			data : projects_limit,
+			tags : getTags(projects_limit)
 		});
 	},
 
