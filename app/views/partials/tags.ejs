@@ -1,10 +1,9 @@
 <div class="tags">
-    <% for(var i=0; i < static.tags.length; i++) { %>
+    <% for(var i=0; i < tags.length; i++) { %>
         <div class="tag">
-            <img src="<%= static.tags[i].icon %>"/>
-            <span><%= static.tags[i].name %></span>
+            <img src="<%= tags[i].icon %>"/>
+            <span><%= tags[i].name %></span>
         </div>
     <% } %>
-    <div class="clear"></div>
-    <button class="buttons black-border">See more tags</button>
 </div>
+<button id="see-more-tags" class="buttons black-border margin-top">See more tags</button>

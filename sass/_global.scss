@@ -30,13 +30,24 @@ body {
 }
 
 p {
+  &.link {
+    color: blue;
+    &:hover {
+      color: #5a73ff;
+      cursor: pointer;
+    }
+  }
   &.heading {
-    font-size: 18px;
+    font-size: 20px;
     display: inline-block;
     &.nav {
       margin-top: 14px;
     }
   }
+}
+
+.control-panel {
+  text-align: center;
 }
 
 a {
@@ -47,8 +58,10 @@ a {
 
 .text-shadow {
   text-shadow: 0 2px 4px rgba(0,0,0,.3);
+  &.dark {
+    text-shadow: 0 2px 4px rgba(0,0,0,1);
+  }
 }
-
 .clear {
   clear: both;
 }

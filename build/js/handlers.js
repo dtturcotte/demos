@@ -1,6 +1,7 @@
 $(document).ready(function () {
 
-	var tags = [];
+	var tags = [],
+		all_tags_loaded = false;
 
 	var htws = {
 		url : 'http://hittingtreeswithsticks.com/?action=personalpage',
@@ -23,12 +24,11 @@ $(document).ready(function () {
 	var links = [];
 
 	$.getJSON(url, function (artwork) {
-		console.log('artwork', artwork);
 		results = artwork.fullpath;
 		links = artwork.link;
 
 		htws.site = 'comics';
-		htws.limit = 60;
+		htws.limit = 75;
 		url = htws.url + '&limit=' + htws.limit + '&mw=' +  htws.max_width + '&mh=' +  htws.max_height + '&site=' + htws.site  + '&callback=?';
 		$.getJSON(url, function (comics) {
 			results = (comics.fullpath) ? results.concat(comics.fullpath) : results;
@@ -56,42 +56,57 @@ $(document).ready(function () {
 		});
 	});
 
-	$('.tag').on('click', function() {
-		$el = $(this);
-		$el_text = $el.find('span').text();
-		if ($el.hasClass('clicked')) {
-			$el.removeClass('clicked');
-			var index = tags.indexOf($el_text);
-			if (index > -1) {
-				tags.splice(index, 1);
-			}
-		} else {
-			$el.addClass('clicked');
-			tags.push($el_text);
-		}
-		setProjects(tags);
+	$('#see-more-tags').on('click', function () {
+		setTags('all');
 	});
 
 	var setProjects = function (tags) {
-
-		console.log('posting ', tags);
-		$.post('/tags', { data : tags }, function (res) {
-			console.log('resss', res);
+		$.post('/projects', { data : tags }, function (res) {
 			$('#home').html(res);
-			bindEvents();
+			bindProjectHover();
 		});
 	};
 
-	var bindEvents = function () {
-		console.log('binding');
+	var setTags = function (tags) {
+
+		$.post('/tags', function (res) {
+			$('#tag-container').html(res);
+			$('#see-more-tags').hide();
+			setProjects(tags);
+			bindTagClick();
+			all_tags_loaded = true;
+		});
+	};
+
+	var bindTagClick = function () {
+		$('.tag').on('click', function() {
+			$el = $(this);
+			$el_text = $el.find('span').text();
+			console.log('clicked', $el_text);
+			if ($el.hasClass('clicked')) {
+				$el.removeClass('clicked');
+				var index = tags.indexOf($el_text);
+				if (index > -1) {
+					tags.splice(index, 1);
+				}
+			} else {
+				$el.addClass('clicked');
+				tags.push($el_text);
+			}
+			var tag_input = (tags.length === 0 && !all_tags_loaded) ? 'initial' : tags;
+			console.log('setting projects', tag_input);
+			setProjects(tag_input);
+		});
+	};
+
+	var bindProjectHover = function () {
 		$('.project > .info').hover(function () {
 			$(this).parent().find('.images').addClass('blur');
 		}, function () {
 			$(this).parent().find('.images').removeClass('blur');
 		});
-
 	};
 
-	bindEvents();
-
+	bindProjectHover();
+	bindTagClick();
 });

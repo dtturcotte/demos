@@ -16,7 +16,7 @@
             <div class="full-section lg black center of-hidden height">
                 <div class="grid"></div>
                 <section class="content small overlay home">
-                    <h3 class="text-shadow">I love building things customers would <i>want</i> to use</h3>
+                    <h1 class="text-shadow">I love building things customers would <i>want</i> to use</h1>
                     <p class="heading">I have leveraged my full-stack experience to build anything from comprehensive test prep platforms to Alexa voice ordering beer experiences</p>
                 </section>
             </div>
@@ -24,7 +24,9 @@
                 <section class="content small">
                     <p class="heading">Check out some of my latest! Choose a few tags...</p>
                 </section>
-                <% include ./partials/tags %>
+                <div id="tag-container">
+                    <% include ./partials/tags %>
+                </div>
             </div>
             <div class="full-section lg purple min-height">
                 <section class="content">

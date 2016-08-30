@@ -1,6 +1,8 @@
 .buttons {
-  font-size: 16px;
-  padding: 10px;
+  font-family: 'Open Sans', Arial, sans-serif;
+  font-weight: 300;
+  font-size: 14px;
+  padding: 8px;
   color: white;
   display: inline-block;
   border-radius: 4px;
@@ -65,5 +67,8 @@
     padding: 15px;
     width: 220px;
     font-size: 20px;
+  }
+  &.margin-top {
+    margin-top: 60px;
   }
 }

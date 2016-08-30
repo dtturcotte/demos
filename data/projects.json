@@ -7,7 +7,7 @@
     "link" : "speech-api/index.html",
     "tags" : [
       "freelance",
-      "web app",
+      "laravel",
       "angular",
       "featured"
     ],
@@ -21,7 +21,7 @@
     "image" : "http://i.imgur.com/Z4BUKkY.png",
     "link" : "http://www.hittingtreeswithsticks.com",
     "tags" : [
-      "angular"
+      "php"
     ],
     "background-color" : "#b83325",
     "color" : "white"
@@ -45,57 +45,61 @@
     "image" : "http://i.imgur.com/BZDibXh.png",
     "link" : "raphael-js/index.html",
     "tags" : [
-      "freelance"
+      "javascript"
     ],
     "background-color" : "#f79f23",
     "color" : "white"
   },
   {
     "id" : 5,
-    "name" : "Dynamic Dental Edu.",
+    "name" : "Amazon Alexa",
     "about" : "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.",
     "image" : "http://i.imgur.com/BZDibXh.png",
     "link" : "speech-api/index.html",
     "tags" : [
-      "freelance",
-      "web app",
-      "angular"
+      "fuzz",
+      "node",
+      "iot"
     ],
     "background-color" : "#00b8f1",
     "color" : "white"
   },
   {
     "id" : 6,
-    "name" : "Hitting Trees with Sticks",
+    "name" : "Chinese Game",
     "about" : "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.",
-    "image" : "http://i.imgur.com/Z4BUKkY.png",
+    "image" : "http://i.imgur.com/BZDibXh.png",
     "link" : "http://www.hittingtreeswithsticks.com",
     "tags" : [
-      "angular"
+      "javascript",
+      "laravel",
+      "games"
     ],
     "background-color" : "#b83325",
     "color" : "white"
   },
   {
     "id" : 7,
-    "name" : "Rummy",
+    "name" : "Viewers to Volunteers",
     "about" : "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.",
     "image" : "http://i.imgur.com/BZDibXh.png",
     "link" : "child-rummy-canvas/index.htm",
     "tags" : [
-      "angular"
+      "angular",
+      "node"
     ],
     "background-color" : "#deffff",
     "color" : "black"
   },
   {
     "id" : 8,
-    "name" : "Algorithms",
+    "name" : "Shake Shack",
     "about" : "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.",
     "image" : "http://i.imgur.com/BZDibXh.png",
     "link" : "raphael-js/index.html",
     "tags" : [
-      "freelance"
+      "fuzz",
+      "django"
     ],
     "background-color" : "#f79f23",
     "color" : "white"

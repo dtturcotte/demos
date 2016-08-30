@@ -64,8 +64,11 @@ function personalpage() {
     );
     
     $thumbpath = ($site == 'comics') ? $thumbpaths['comics'] : $thumbpaths['artwork'];
-    $images = array();    
-    
+    $images = array(
+        'fullpath' => array(),
+        'link' => array()
+    );   
+
     $sql = "SELECT id, number, title, path, thumb, views, date, catidFK FROM $site ORDER BY RAND() DESC LIMIT $limit";
 
     $imgpath = $mysqli->query($sql) or trigger_error($mysqli->error.$sql);    
@@ -73,11 +76,15 @@ function personalpage() {
      mysqli_close($mysqli);
      
      while ($row = $imgpath->fetch_assoc()) { 
-        array_push($images, '
-            <a href="http://hittingtreeswithsticks.com?action=viewimage&site='.$site.'&id=' . $row['id'] . '&cat='.$cat.'">
+        array_push($images['fullpath'], 
+            '<a href="http://hittingtreeswithsticks.com?action=viewimage&site='.$site.'&id=' . $row['id'] . '&cat='.$cat.'">
                 <img src="http://hittingtreeswithsticks.com/php/thumber.php?img=' . $thumbpath . $row['thumb'] . '&mw=' . $mw . '&mh=' . $mh . '"/>
             </a>'
             );
+        array_push($images['link'], 
+            'http://hittingtreeswithsticks.com?action=viewimage&site='.$site.'&id=' . $row['id'] . '&cat='.$cat
+            );
+            
      }	
      
    // callback the anonymous JSONP request with the data
