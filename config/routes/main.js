@@ -38,8 +38,7 @@ module.exports = function (app, globals, path) {
 	app.get('/suki', suki);
 
 	/*
-		Alexa
-		- endpoints to support my Lambda Storefront app
+		Alexa : endpoints to support my Lambda Storefront app
 	 */
 	app.get('/api/1.0/user', alexa.getUser);
 	app.get('/api/1.0/orders', alexa.getUserOrders);
