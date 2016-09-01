@@ -5,11 +5,15 @@
     "items" : [
       {
         "id" : 1,
-        "quantity" : 2
+        "quantity" : 2,
+        "name" : "Pack of bananas",
+        "price" : "9.99"
       },
       {
         "id" : 2,
-        "quantity" : 1
+        "quantity" : 1,
+        "name" : "Pack of bananas",
+        "price" : "9.99"
       }
     ]
   }

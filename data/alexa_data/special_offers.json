@@ -4,6 +4,7 @@
     "name" : "Prime Time Special Package Offer",
     "products" : [
       {
+        "id" : 1,
         "name" : "Pack of bananas",
         "price" : "9.99"
       }
