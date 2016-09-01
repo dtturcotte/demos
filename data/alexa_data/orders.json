@@ -6,13 +6,13 @@
       {
         "id" : 1,
         "quantity" : 2,
-        "name" : "Pack of bananas",
+        "name" : "clump of raw fish",
         "price" : "9.99"
       },
       {
         "id" : 2,
         "quantity" : 1,
-        "name" : "Pack of bananas",
+        "name" : "sack of aged meat",
         "price" : "9.99"
       }
     ]
