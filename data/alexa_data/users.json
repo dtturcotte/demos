@@ -1,6 +1,19 @@
 [
   {
     "id" : 1,
-    "name" : "dan"
+    "first_name" : "Dan",
+    "payment_profiles" : [
+      {
+        "last_4" : "1212",
+        "card" : "Visa"
+      }
+    ],
+    "shipping_addresses" : [
+      {
+        "street" : "123 Circle Street",
+        "state" : "New York",
+        "country" : "United States"
+      }
+    ]
   }
 ]

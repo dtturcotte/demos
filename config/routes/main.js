@@ -42,6 +42,7 @@ module.exports = function (app, globals, path) {
 		- endpoints to support my Lambda Storefront app
 	 */
 	app.get('/api/1.0/user', alexa.getUser);
+	app.get('/api/1.0/orders', alexa.getUserOrders);
 
 
 };
