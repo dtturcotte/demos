@@ -5,7 +5,9 @@
     "suppliers" : [
       {
         "id" : 1,
-        "name" : "Number One Supplier"
+        "name" : "Number One Supplier",
+        "opens_at" : "2016-09-10T14:00:00-04:00",
+        "closes_at" : "2016-09-11T21:30:00-04:00"
       }
     ]
   }
