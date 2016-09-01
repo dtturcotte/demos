@@ -15,21 +15,24 @@ module.exports = {
 		var orders = orders[0];
 		console.log('ALEXA GET USER ORDERS STRINGIFIED', JSON.stringify(orders));
 		console.log('ALEXA GET USER ORDERS', orders);
-		return res.send(orders);
+		var stringify = JSON.stringify(orders);
+		return res.send(stringify);
 	},
 
 	getSupplierByLocation : function (req, res, next) {
 		var suppliers = suppliers[0];
 		console.log('ALEXA GET SUPPLIERS STRINGIFIED', JSON.stringify(suppliers));
 		console.log('ALEXA GET SUPPLIERS', suppliers);
-		return res.send(suppliers);
+		var stringify = JSON.stringify(suppliers);
+		return res.send(stringify);
 	},
 
 	getSpecialOffers : function (req, res, next) {
 		var special_offers = special_offers[0];
 		console.log('ALEXA GET SPECIAL OFFERS STRINGIFIED', JSON.stringify(special_offers));
 		console.log('ALEXA GET SPECIAL OFFERS', special_offers);
-		return res.send(special_offers);
+		var stringify = JSON.stringify(special_offers);
+		return res.send(stringify);
 	}
 
 };
