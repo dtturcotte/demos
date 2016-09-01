@@ -1,0 +1,12 @@
+[
+  {
+    "id" : 1,
+    "name" : "Prime Time Special Package Offer",
+    "products" : [
+      {
+        "name" : "Pack of bananas",
+        "price" : "9.99"
+      }
+    ]
+  }
+]

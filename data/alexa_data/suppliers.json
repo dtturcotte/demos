@@ -1,0 +1,12 @@
+[
+  {
+    "id" : 1,
+    "location" : "New York",
+    "suppliers" : [
+      {
+        "id" : 1,
+        "name" : "Number One Supplier"
+      }
+    ]
+  }
+]
