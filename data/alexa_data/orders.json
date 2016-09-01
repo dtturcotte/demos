@@ -3,9 +3,14 @@
     "id" : 1,
     "order" : "order 1",
     "items" : [
-      "item 1",
-      "item 2",
-      "item 3"
+      {
+        "id" : 1,
+        "quantity" : 2
+      },
+      {
+        "id" : 2,
+        "quantity" : 1
+      }
     ]
   }
 ]
