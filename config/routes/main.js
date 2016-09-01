@@ -44,7 +44,7 @@ module.exports = function (app, globals, path) {
 	app.get('/api/1.0/user', alexa.getUser);
 	app.get('/api/1.0/orders', alexa.getUserOrders);
 	app.get('/api/1.0/suppliers', alexa.getSupplierByLocation);
-	app.get('/api/1.0/offers', alexa.getSpecialOffers);
+	app.get('/api/1.0/supplier/offers', alexa.getSpecialOffers);
 
 
 };

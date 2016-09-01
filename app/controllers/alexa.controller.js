@@ -1,8 +1,3 @@
-//var users = require('../../data/alexa_data/users.json');
-//var orders = require('../../data/alexa_data/orders.json');
-//var suppliers = require('../../data/alexa_data/suppliers.json');
-//var special_offers = require('../../data/alexa_data/special_offers.json');
-
 module.exports = {
 
 	getUser : function (req, res, next) {
