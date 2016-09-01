@@ -1,23 +1,31 @@
 <div class="projects">
     <% for(var i=0; i < data.length; i++) { %>
-        <a href="<%= data[i].link %>" target="_blank">
-            <div class="project">
-                <div class="info">
-                    <p class="title text-shadow dark"><%= data[i].name %></p>
-                    <div class="icons">
-                        <% for(var j=0; j < tags.length; j++) { %>
-                            <% if ( data[i].tags.indexOf(tags[j].name) > -1) { %>
-                                <img src="<%= tags[j].icon %>"/>
-                            <% } %>
+        <div class="project" data-link="<%= data[i].link %>">
+            <div class="info">
+                <p class="title text-shadow dark"><%= data[i].name %></p>
+                <div class="icons">
+                    <% for(var j=0; j < tags.length; j++) { %>
+                        <% if ( data[i].tags.indexOf(tags[j].name) > -1) { %>
+                            <img src="<%= tags[j].icon %>"/>
                         <% } %>
-                    </div>
-                    <p><%= data[i].about %></p>
+                    <% } %>
                 </div>
-                <div class="images">
-                    <img src="<%= data[i].image %>"/>
-                </div>
+                <p><%= data[i].about %></p>
+                <% if (data[i].github && data[i].github !== 'private') { %>
+                    <a href="<%= data[i].github %>" target="_blank" class="github_link">
+                        <i class="fa fa-2x fa-github bottom-icons github" style="opacity:0" aria-hidden="true"></i>
+                    </a>
+                <% } else if (data[i].github && data[i].github === 'private') { %>
+                    <i class="fa fa-2x fa-lock bottom-icons github" style="opacity:0" aria-hidden="true"></i>
+                    <span class="bottom-icons github text" style="opacity:0">Private Repo - Ask Me</span>
+                <% } else { %>
+
+                <% } %>
             </div>
-        </a>
+            <div class="images">
+                <img src="<%= data[i].image %>"/>
+            </div>
+        </div>
     <% } %>
     <div class="clear"></div>
 </div>

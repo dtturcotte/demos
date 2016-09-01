@@ -11,6 +11,7 @@
       "angular",
       "featured"
     ],
+    "github" : "https://github.com/dtturcotte/express-dde",
     "background-color" : "#00b8f1",
     "color" : "white"
   },
@@ -33,34 +34,38 @@
     "image" : "http://i.imgur.com/BZDibXh.png",
     "link" : "child-rummy-canvas/index.htm",
     "tags" : [
-      "angular"
+      "game",
+      "javascript",
+      "animations"
     ],
+    "github" : "https://github.com/dtturcotte/demos/tree/master/child-rummy-canvas",
     "background-color" : "#deffff",
     "color" : "black"
   },
   {
     "id" : 4,
-    "name" : "Algorithms",
+    "name" : "Animated Algorithms",
     "about" : "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.",
     "image" : "http://i.imgur.com/BZDibXh.png",
     "link" : "raphael-js/index.html",
     "tags" : [
       "javascript"
     ],
+    "github" : "https://github.com/dtturcotte/demos/tree/master/raphael-js",
     "background-color" : "#f79f23",
     "color" : "white"
   },
   {
     "id" : 5,
-    "name" : "Amazon Alexa",
+    "name" : "Alexa Voice Shopping",
     "about" : "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.",
     "image" : "http://i.imgur.com/BZDibXh.png",
     "link" : "speech-api/index.html",
     "tags" : [
-      "fuzz",
       "node",
       "iot"
     ],
+    "github" : "private",
     "background-color" : "#00b8f1",
     "color" : "white"
   },
@@ -75,6 +80,7 @@
       "laravel",
       "games"
     ],
+    "github" : "private",
     "background-color" : "#b83325",
     "color" : "white"
   },
@@ -101,6 +107,35 @@
       "fuzz",
       "django"
     ],
+    "background-color" : "#f79f23",
+    "color" : "white"
+  },
+  {
+    "id" : 9,
+    "name" : "Speech App",
+    "about" : "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.",
+    "image" : "http://i.imgur.com/BZDibXh.png",
+    "link" : "raphael-js/index.html",
+    "tags" : [
+      "featured",
+      "javascript",
+      "google apis"
+    ],
+    "github" : "https://github.com/dtturcotte/demos/tree/master/speech-api",
+    "background-color" : "#f79f23",
+    "color" : "white"
+  },
+  {
+    "id" : 9,
+    "name" : "Slack Imposter Bots",
+    "about" : "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.",
+    "image" : "http://i.imgur.com/BZDibXh.png",
+    "link" : "raphael-js/index.html",
+    "tags" : [
+      "node",
+      "slack apis"
+    ],
+    "github" : "https://github.com/dtturcotte/demos/tree/master/slack_bots",
     "background-color" : "#f79f23",
     "color" : "white"
   }

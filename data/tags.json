@@ -47,9 +47,37 @@
     }
   },
   {
+    "name" : "animations",
+    "type" : "skill",
+    "icon" : "../data/assets/animations.png",
+    "strength" : 8,
+    "colors" : {
+      "background" : "rgba(54, 162, 235, 0.2)",
+      "border" : "rgba(54, 162, 235, 1)"
+    }
+  },
+  {
     "name" : "node",
     "type" : "skill",
     "icon" : "../data/assets/nodejs.png",
+    "strength" : 6,
+    "colors" : {
+      "background" : "rgba(255, 206, 86, 0.2)",
+      "border" : "rgba(255, 206, 86, 1)"
+    }
+  },
+  {
+    "name" : "google apis",
+    "icon" : "../data/assets/google.png",
+    "strength" : 6,
+    "colors" : {
+      "background" : "rgba(255, 206, 86, 0.2)",
+      "border" : "rgba(255, 206, 86, 1)"
+    }
+  },
+  {
+    "name" : "slack apis",
+    "icon" : "../data/assets/slack.png",
     "strength" : 6,
     "colors" : {
       "background" : "rgba(255, 206, 86, 0.2)",

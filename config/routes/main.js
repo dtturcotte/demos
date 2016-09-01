@@ -3,6 +3,7 @@ module.exports = function (app, globals, path) {
 	var home = require(path.join(globals.paths.controllers, 'home.controller'));
 	var about = require(path.join(globals.paths.controllers, 'about.controller'));
 	var skills = require(path.join(globals.paths.controllers, 'skills.controller'));
+	var alexa = require(path.join(globals.paths.controllers, 'alexa.controller'));
 
 	var dantebot = require('../../slack_bots/dantebot');
 	var suki = require('../../slack_bots/suki');
@@ -35,5 +36,12 @@ module.exports = function (app, globals, path) {
 	app.get('/dante', dantebot);
 	app.post('/suki', suki);
 	app.get('/suki', suki);
+
+	/*
+		Alexa
+		- endpoints to support my Lambda Storefront app
+	 */
+	app.get('/api/1.0/user', alexa.getUser);
+
 
 };

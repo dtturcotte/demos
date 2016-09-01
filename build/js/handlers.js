@@ -9,8 +9,19 @@ $(document).ready(function () {
 
 	var setProjects = function (tags) {
 		$.post('/projects', { data : tags }, function (res) {
-			$('#home').html(res);
+			$('#home').hide().html(res).fadeIn('slow');
 			bindProjectHover();
+			bindProjectLink();
+		});
+	};
+
+	var bindProjectLink = function () {
+		$('.project').on('click', function () {
+			window.open($(this).data('link'), '_blank');
+		});
+		$('.project').find('.github_link').on('click', function (e) {
+			// prevent parent project event handler from firing on nested github icon click
+			e.stopPropagation();
 		});
 	};
 
@@ -55,5 +66,6 @@ $(document).ready(function () {
 	};
 
 	bindProjectHover();
+	bindProjectLink();
 	bindTagClick();
 });
