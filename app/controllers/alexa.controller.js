@@ -32,6 +32,19 @@ module.exports = {
 		console.log('ALEXA GET SPECIAL OFFERS', special_offer);
 		var stringify = JSON.stringify(special_offer);
 		return res.send(stringify);
+	},
+
+	postUserOrder : function (req, res, next) {
+		var dummy_post_res = {
+			data : {
+				"status" : 200,
+				"message" : "order placed"
+			}
+		};
+
+		var stringify = JSON.stringify(dummy_post_res);
+		return res.send(stringify);
 	}
+
 
 };

@@ -5,11 +5,13 @@
     "payment_profiles" : [
       {
         "last_4" : "1212",
-        "card" : "Visa"
+        "card" : "Visa",
+        "default" : true
       }
     ],
     "shipping_addresses" : [
       {
+        "id" : 1,
         "street" : "123 Circle Street",
         "state" : "New York",
         "country" : "United States"

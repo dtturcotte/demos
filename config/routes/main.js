@@ -43,6 +43,7 @@ module.exports = function (app, globals, path) {
 	 */
 	app.get('/api/1.0/user', alexa.getUser);
 	app.get('/api/1.0/orders', alexa.getUserOrders);
+	app.post('/api/1.0/order', alexa.postUserOrder);
 	app.get('/api/1.0/suppliers', alexa.getSupplierByLocation);
 	app.get('/api/1.0/supplier/offers', alexa.getSpecialOffers);
 
