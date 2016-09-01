@@ -36,10 +36,9 @@ module.exports = {
 
 	postUserOrder : function (req, res, next) {
 		var dummy_post_res = {
-			data : {
-				"status" : 200,
-				"message" : "order placed"
-			}
+			"status" : 200,
+			"message" : "order placed",
+			"number" : 1
 		};
 
 		var stringify = JSON.stringify(dummy_post_res);
