@@ -11,7 +11,8 @@ module.exports = {
 
 	getUserOrders : function (req, res, next) {
 		var orders = orders[0];
-		console.log('ALEXA GET USER ORDERS', JSON.stringify(orders));
-		return res.send(JSON.stringify(orders));
+		console.log('ALEXA GET USER ORDERS STRINGIFIED', JSON.stringify(orders));
+		console.log('ALEXA GET USER ORDERS', orders);
+		return res.send(orders);
 	}
 };
