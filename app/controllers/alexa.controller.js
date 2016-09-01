@@ -12,7 +12,7 @@ module.exports = {
 	},
 
 	getUserOrders : function (req, res, next) {
-		var orders = orders[0];
+		var orders = orders;
 		console.log('ALEXA GET USER ORDERS STRINGIFIED', JSON.stringify(orders));
 		console.log('ALEXA GET USER ORDERS', orders);
 		var stringify = JSON.stringify(orders);
