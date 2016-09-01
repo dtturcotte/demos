@@ -1,5 +1,11 @@
 [
   {
-    "order" : "order 1"
+    "id" : 1,
+    "order" : "order 1",
+    "items" : [
+      "item 1",
+      "item 2",
+      "item 3"
+    ]
   }
 ]
