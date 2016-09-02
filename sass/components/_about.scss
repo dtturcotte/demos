@@ -1,0 +1,32 @@
+.about {
+  .content-blocks {
+    display: inline-block;
+    &.black {
+      background-color: black;
+    }
+    .content-block {
+      img {
+        width: 100%;
+      }
+      &.left {
+        display: inline-block;
+        width: 30%;
+        vertical-align: top;
+        margin-top: 10%;
+        color: white;
+        line-height: 1.4;
+      }
+      &.right {
+        width: 50%;
+        display: inline-block;
+        float: right;
+        .overlay {
+          height: 350px;
+          width: 100%;
+          z-index: 5555;
+          position: absolute;
+        }
+      }
+    }
+  }
+}
