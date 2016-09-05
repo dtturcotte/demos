@@ -108,7 +108,7 @@ $(document).ready(function () {
 
 		$('#quiz').fadeIn('slow');
 		$('#music_quiz_input_container').fadeOut('fast');
-		var $result = (res) ? $('<h3>+10pts! Mr. Mark Knopfler!</h3>') : $('<h3 class="incorrect">Nope. Was it my crappy drawing?</h3>'),
+		var $result = (res) ? $('<h3 class="correct">+10pts! Mr. Mark Knopfler!</h3>') : $('<h3 class="incorrect">Nope. Was it my crappy drawing?</h3>'),
 			$others = $('<p>Here\'s what others have been guessing:</p>');
 
 		if (localStorage.getItem('quiz_answered') === null) {
