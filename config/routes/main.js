@@ -27,7 +27,6 @@ module.exports = function (app, globals, path) {
 	app.post('/projects', home.projects);
 	app.post('/tags', home.tags);
 	app.get('/about', about.index);
-	app.get('/about/words', about.words);
 	app.get('/skills', skills.index);
 
 	/*
