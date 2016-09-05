@@ -1,30 +1,65 @@
 .about {
+  img {
+    display: none;
+  }
   .content-blocks {
     display: inline-block;
+    width: 100%;
     &.black {
       background-color: black;
     }
-    .content-block {
+    .code-block {
+      text-align: left;
+      font-size: 16px;
       img {
-        width: 100%;
+        width: 150px;
+      }
+    }
+    .content-block {
+      position: relative;
+      #shanghai {
+        min-width: 640px;
+        max-width: 900px;
+        margin-top: -100px;
+      }
+      #dire_straits {
+        max-width: 900px;
       }
       &.left {
         display: inline-block;
-        width: 30%;
+        width: 40%;
         vertical-align: top;
-        margin-top: 10%;
-        color: white;
+        height: 350px;
+        color: #fff;
         line-height: 1.4;
+        &.music {
+          width: 50%;
+          height: auto;
+        }
+        .text-block {
+          width: 80%;
+          margin: 26% auto 0;
+          vertical-align: top;
+
+        }
       }
       &.right {
         width: 50%;
         display: inline-block;
+        position: relative;
         float: right;
+        &.music {
+          width: 40%;
+          display: inline-block;
+          position: relative;
+          float: right;
+          text-align: left;
+        }
         .overlay {
           height: 350px;
           width: 100%;
-          z-index: 5555;
           position: absolute;
+          z-index: 2;
         }
       }
     }

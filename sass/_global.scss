@@ -6,12 +6,16 @@ body {
   letter-spacing: .9px;
   margin: 0;
 }
+
 .gradient {
   background-image:
   linear-gradient(
     to right,
-    black, rgba(0, 0, 0, 0)
+    #2a282b, rgba(0, 0, 0, 0) 30%
   );
+}
+.text-block {
+  line-height: 1.7;
 }
 .app-wrapper {
   box-sizing: border-box;
@@ -91,19 +95,72 @@ h1, h2, h3, h4 {
   transition: filter 0.3s ease-in-out 0.1s;
 }
 
+pre code {
+  font: 16px Monaco,"Courier New","DejaVu Sans Mono","Bitstream Vera Sans Mono",monospace;
+  color: #52595d;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  -moz-background-clip: padding;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+  border: 1px solid #ccc;
+  background-color: #f9f9f9;
+  padding: 0px 3px;
+  display: inline-block;
+  width: 75%;
+  padding-left: 240px;
+}
+
+.strip {
+  width: 100%;
+  &.large {
+    padding: 20px 0;
+  }
+  &.small {
+    padding: 10px 0;
+  }
+  &.smallest {
+    padding: 5px 0;
+  }
+  &.blue {
+    text-align: center;
+    background-color: #4b3d81;
+    min-width: 600px;
+    &.gradient {
+      background-image: linear-gradient(to right, rgba(57, 194, 218, 0), rgba(57, 194, 218, 1) 35%, rgba(57, 194, 218, 0));
+    }
+    &.border {
+      border-bottom: thin solid rgba(0,0,0,.3);;
+    }
+  }
+}
+
 .full-section {
   width: 100%;
   display: inline-block;
   box-sizing: border-box;
   position: relative;
   color: black;
+  &.dark-gray {
+    background-color: #2a282b;
+  }
   &.black {
     background-image: radial-gradient(#474548, #2a282b);
+    color: white;
+  }
+  &.pure-black {
+    background-color: #080706;
     color: white;
   }
   &.dark-black {
     background-image: radial-gradient(#1d1b1e, #09070a);
     color: white;
+    &.shanghai-img {
+      background-image: url(/data/assets/shanghai.jpg);
+      background-position: bottom center;
+      background-size: cover;
+    }
   }
   &.light {
     background-image: radial-gradient(#fdfdfd,#bbb);

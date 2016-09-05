@@ -2,7 +2,22 @@
 <html lang="en">
 	<head>
         <% include ../partials/head %>
-	</head>
+
+        <script src="https://www.gstatic.com/firebasejs/3.3.0/firebase.js"></script>
+        <script>
+            // Initialize Firebase
+            var config = {
+                apiKey: "AIzaSyBHvSoXwYoELHoVt1E0WdpJR2zbLJsjtRw",
+                authDomain: "musicquiz-79603.firebaseapp.com",
+                databaseURL: "https://musicquiz-79603.firebaseio.com",
+                storageBucket: ""
+            };
+            firebase.initializeApp(config);
+        </script>
+
+        <script src="../../build/js/bundle.js"></script>
+
+    </head>
 	<body>
 		<div class="app-wrapper">
 			<header>
@@ -10,22 +25,75 @@
             </header>
 
             <div class="about">
-                <div class="full-section center of-hidden height white">
-                        <div class="content-blocks black">
-                            <div class="content-block left">
-                                <p>
-                                    I have been studying Mandarin since 2007 and read and speak proficiently. Pictured here, I was honored to join a group of 20 high schools students through
-                                    <a href="http://jaconn.org/ja-goes-china/" target="_blank" class="link">Junior Achievement</a>
-                                    as their teacher and mentor while they created mock trading companies in Beijing. An experience I will never forget! <a class="link" target="_blank" href="http://jainchina.blogspot.com/">Read more!</a>
+                <div class="full-section of-hidden height dark-gray">
+                    <div class="content-blocks">
+                        <div class="content-block left">
+                            <div class="text-block">
+                                <p class="heading text-shadow dark">
+                                    I am honored you have come to learn more about me. I like to do the sports, sketch things, and speak foreign languages at people.
                                 </p>
                             </div>
-                            <div class="content-block right">
-                                <div class="overlay gradient"></div>
-                                <div class="image-container">
-                                    <!--<img src="../../data/assets/shanghai.jpg"/>-->
+                        </div>
+                        <div class="content-block right">
+                            <div class="overlay gradient"></div>
+                            <div class="image-container">
+                                <img id="shanghai" src="../../data/assets/shanghai.jpg"/>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="full-section center lg white">
+                    <section class="content small">
+                        <div class="content-blocks">
+                            <p class="heading">run C:/turcotte.exe </p>
+
+                            <div class="code-block">
+<pre>
+<code>
+
+
+do {
+    <div class="code-line">
+        <img src="../../data/assets/skateboard.png"/>.exec("spinning mcflippers");
+    </div>
+    <div class="code-line">
+        <img src="../../data/assets/ski.png"/>.exec("twisty upsidedowners");
+    </div>
+    <div class="code-line">
+        <img src="../../data/assets/brush.png"/>.exec("happy accidents");
+    </div>
+}
+while (!coding);
+
+
+</code>
+</pre>
+                            </div>
+                        </div>
+
+                    </section>
+                </div>
+                <div class="strip smallest blue gradient border"> <img src="../../data/assets/headphones.png"/></div>
+                <div class="full-section center lg pure-black">
+                    <section class="content">
+                        <div class="content-blocks">
+                            <div class="content-block left music">
+                                <img id="dire_straits" src="../../data/assets/dire_straits.png"/>
+                            </div>
+                            <div class="content-block right music">
+                                <p>
+                                    This guy's music is amazing, so I painted this and sent it to him. I didn't hear back, but I'm sure he hung it up somewhere special.
+                                </p>
+                                <p>
+                                    10 points if you can guess who it is.
+                                </p>
+                                <div id="quiz">
+
                                 </div>
                             </div>
                         </div>
+                        <div class="clear"></div>
+                    </section>
                 </div>
             </div>
             <footer>

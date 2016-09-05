@@ -138,5 +138,18 @@
     "github" : "https://github.com/dtturcotte/demos/tree/master/slack_bots",
     "background-color" : "#f79f23",
     "color" : "white"
+  },
+  {
+    "id" : 9,
+    "name" : "Fuzz Labs Blog",
+    "about" : "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.",
+    "image" : "http://i.imgur.com/BZDibXh.png",
+    "link" : "http://fuzz-labs-dev.s3-website-us-east-1.amazonaws.com/#/",
+    "tags" : [
+      "react"
+    ],
+    "github" : "private",
+    "background-color" : "#f79f23",
+    "color" : "white"
   }
 ]
