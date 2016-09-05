@@ -77,18 +77,27 @@ while (!coding);
                 <div class="full-section center lg pure-black">
                     <section class="content">
                         <div class="content-blocks">
-                            <div class="content-block left music">
-                                <img id="dire_straits" src="../../data/assets/dire_straits.png"/>
-                            </div>
+                            <a href="https://www.youtube.com/watch?v=8Pa9x9fZBtY" target="_blank">
+                                <div class="content-block left music">
+                                    <img id="guess_who" src="../../data/assets/guess_who.png"/>
+                                </div>
+                            </a>
                             <div class="content-block right music">
-                                <p>
-                                    This guy's music is amazing, so I painted this and sent it to him. I didn't hear back, but I'm sure he hung it up somewhere special.
-                                </p>
-                                <p>
-                                    10 points if you can guess who it is.
-                                </p>
-                                <div id="quiz">
-
+                                <div class="text-block">
+                                    <p>
+                                        This guy's music is amazing, so I painted this and sent it to him. I didn't hear back, but I'm sure he hung it up somewhere special.
+                                    </p>
+                                    <p class="heading">
+                                        <span style="color: #39c2da">10 points</span> if you can guess who it is.
+                                    </p>
+                                    <div id="music_quiz_input_container" class="input-group">
+                                        <input type="text" id="music_quiz_input" class="form-control" placeholder="Make your guess...">
+                                          <span class="input-group-btn">
+                                            <button class="btn btn-default" id="music_quiz_input_button" type="button">Go!</button>
+                                          </span>
+                                    </div>
+                                    <div id="result"></div>
+                                    <div id="quiz"></div>
                                 </div>
                             </div>
                         </div>

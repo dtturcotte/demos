@@ -1,64 +1,123 @@
 (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
+var d3 = require('d3'),
+	cloud = require('d3.layout.cloud');
+
 $(document).ready(function () {
 
-	//$.noConflict();
-	//
-	//$.get('https://musicquiz-79603.firebaseio.com/music_quiz.json', function (res) {
-	//	console.log('music data', res);
-	//});
+	localStorage.clear();
+	if (localStorage.getItem('quiz_answered') === null) {
 
+		$('#music_quiz_input').keypress(function (e) {
+			if (e.which == 13) {
+				sendAnswer();
+				return false;
+			}
+		});
 
-	//$.get('/about/words', function (res) {
-	//	console.log('music data', JSON.parse(res));
-	//	$('#quiz').append('<svg>')
-	//		.attr('width', "1000px")
-	//		.attr('height', "1000px")
-	//
-	//		.text(JSON.parse(res));
-	//});
+		$('#music_quiz_input_button').one('click', function () {
+			sendAnswer();
+		});
 
-	var d3 = require('d3'),
-		cloud = require('d3.layout.cloud');
-
-	var fill = d3.scale.category20();
-
-	var layout = cloud()
-		.size([500, 500])
-		.words([
-			"Mark", "Knopfler", "tom", "petty", "petty", "petty", "dire", "straits",
-			"than", "this"].map(function(d) {
-				return {text: d, size: 10 + Math.random() * 90, test: "haha"};
-			}))
-		.padding(5)
-		.rotate(function() { return ~~(Math.random() * 2) * 90; })
-		.font("Impact")
-		.fontSize(function(d) {
-			console.log('size', d);
-			return d.size;
-		})
-		.on("end", draw);
-
-	layout.start();
-
-	function draw(words) {
-		console.log('DRAW');
-		d3.select("#quiz").append("svg")
-			.attr("width", layout.size()[0])
-			.attr("height", layout.size()[1])
-			.append("g")
-			.attr("transform", "translate(" + layout.size()[0] / 2 + "," + layout.size()[1] / 2 + ")")
-			.selectAll("text")
-			.data(words)
-			.enter().append("text")
-			.style("font-size", function(d) { return d.size + "px"; })
-			.style("font-family", "Impact")
-			.style("fill", function(d, i) { return fill(i); })
-			.attr("text-anchor", "middle")
-			.attr("transform", function(d) {
-				return "translate(" + [d.x, d.y] + ")rotate(" + d.rotate + ")";
-			})
-			.text(function(d) { return d.text; });
+	} else {
+		$.get('https://musicquiz-79603.firebaseio.com/.json', generateCloud);
+		appendResultText(localStorage.getItem('quiz_answered'));
 	}
+
+	function sendAnswer() {
+		var answer = JSON.stringify({
+			'guess': $('#music_quiz_input').val()
+		});
+
+		$.post('https://musicquiz-79603.firebaseio.com/.json', answer, function (res) {
+			$.get('https://musicquiz-79603.firebaseio.com/.json', generateCloud);
+
+			$.get('/about/verify?guess=' + $('#music_quiz_input').val(), function (result) {
+				appendResultText(result);
+			});
+		});
+	}
+
+	function generateCloud(res) {
+
+		var guesses = [];
+		for (var g in res) {
+			if (res[g].guess) {
+				guesses.push(res[g].guess);
+			}
+		}
+
+		if (guesses.length) {
+			var font_sizes = {};
+			for (var i = 0; i < guesses.length; i++) {
+				font_sizes[guesses[i]] = ++font_sizes[guesses[i]] || 1;
+			}
+
+			var unique_words = [];
+			$.each(guesses, function (i, el) {
+				if ($.inArray(el, unique_words) === -1) unique_words.push(el);
+			});
+
+			var fill = d3.scale.category20();
+
+			var layout = cloud()
+				.size([500, 500])
+				.words(unique_words.map(function (d) {
+					return {text: d, size: font_sizes[d] * 5, test: "haha"};
+				})
+			)
+				.padding(5)
+				.rotate(function () {
+					return ~~(Math.random() * 2) * 90;
+				})
+				.font("Impact")
+				.fontSize(function (d) {
+					console.log('size', d.size);
+					return d.size;
+				})
+				.on("end", draw);
+
+			layout.start();
+
+		}
+
+		function draw (words) {
+			d3.select("#quiz").append("svg")
+				.attr("width", layout.size()[0])
+				.attr("height", layout.size()[1])
+				.append("g")
+				.attr("transform", "translate(" + layout.size()[0] / 2 + "," + layout.size()[1] / 2 + ")")
+				.selectAll("text")
+				.data(words)
+				.enter().append("text")
+				.style("font-size", function(d) {
+					d.size = (d.size >= 80) ? 80 : d.size;
+					return d.size + "px";
+				})
+				.style("font-family", "Impact")
+				.style("fill", function(d, i) { return fill(i); })
+				.attr("text-anchor", "middle")
+				.attr("transform", function(d) {
+					return "translate(" + [d.x, d.y] + ")rotate(" + d.rotate + ")";
+				})
+				.text(function(d) { return d.text; });
+		};
+
+	}
+
+	function appendResultText (res) {
+
+		$('#quiz').fadeIn('slow');
+		$('#music_quiz_input_container').fadeOut('fast');
+		var $result = (res) ? $('<h3>+10pts! Mr. Mark Knopfler!</h3>') : $('<h3 class="incorrect">Nope. Was it my crappy drawing?</h3>'),
+			$others = $('<p>Here\'s what others have been guessing:</p>');
+
+		if (localStorage.getItem('quiz_answered') === null) {
+			localStorage.setItem('quiz_answered', res);
+		}
+
+		$('#result').append($result).append($others);
+	}
+
 });
 
 },{"d3":4,"d3.layout.cloud":2}],2:[function(require,module,exports){

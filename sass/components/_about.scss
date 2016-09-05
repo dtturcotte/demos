@@ -1,5 +1,5 @@
 .about {
-  img {
+  img, #quiz {
     display: none;
   }
   .content-blocks {
@@ -63,5 +63,34 @@
         }
       }
     }
+  }
+  *::-webkit-input-placeholder {
+    color: snow;
+  }
+  *:-moz-placeholder {
+    /* FF 4-18 */
+    color: snow;
+  }
+  *::-moz-placeholder {
+    /* FF 19+ */
+    color: snow;
+  }
+  *:-ms-input-placeholder {
+    /* IE 10+ */
+    color: snow;
+  }
+  textarea:focus, input:focus {
+    color: snow;
+  }
+  input[type="text"] {
+    background-color: #48528f;
+    border-radius: 0;
+    border: none;
+    box-shadow: inset 2px 2px 2px 0px #243182;
+  }
+  button {
+    border: none;
+    padding: 7px 26px;
+    border-radius: 0;
   }
 }
