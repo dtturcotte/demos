@@ -34,7 +34,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 					shapeArray.push([new Logo("Logo", startingShapes[i], "black"), letterShapes[i]]);
 				}
 
-				document.getElementById("headerCanvas").addEventListener("click", this.tryStuff.bind(this), false);
+				document.getElementById("headerCanvas").addEventListener("mouseover", this.tryStuff.bind(this), false);
 			};
 
 			api.tryStuff = function () {

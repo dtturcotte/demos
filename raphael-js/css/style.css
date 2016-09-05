@@ -17,6 +17,26 @@ input[type="text"] {
     border-radius: 4px;
 }
 
+.full-section.light {
+    display: inline-block;
+    width: 100%;
+    background-image: radial-gradient(#fdfdfd,#bbb);
+    padding: 30px;
+}
+.full-section.white {
+    display: inline-block;
+    width: 100%;
+    background-image: radial-gradient(#fdfdfd, #f2f2f2);
+    padding: 30px;
+}
+.full-section.white.center {
+    display: inline-block;
+    width: 100%;
+    background-image: radial-gradient(#fdfdfd, #f2f2f2);
+    padding: 25px 0;
+    text-align: center;
+}
+
 button {
     font-size: 12px;
     padding: 8px;
@@ -47,7 +67,7 @@ button:hover {
 }
 
 h3 {
-    color: rgb(161, 175, 232);
+    color: rgb(41, 45, 47);
 }
 
 .uses {
@@ -55,7 +75,7 @@ h3 {
 }
 
 #header {
-    background: rgb(77, 92, 100);
+    background: rgb(69, 127, 165);
     padding-top:1px;
     padding-left:10px;
     width:100%;
@@ -102,9 +122,20 @@ h3 {
     cursor:pointer;
 }
 
+p.heading {
+    font-size: 20px;
+    display: inline-block;
+}
+
+.buttons span {
+    border: thin solid black;
+    padding: 5px;
+}
+
 .buttons span:hover {
-    color: gray;
+    color: white;
     cursor:pointer;
+    background-color: #abacac;
 }
 
 #matrixLbl, #treeLbl, #dsLbl {
@@ -123,8 +154,4 @@ h3 {
 }
 .Acol {
     margin-left: 8px;
-}
-
-#pathFinder {
-    padding: 50px;
 }

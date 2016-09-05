@@ -2,9 +2,10 @@
   {
     "id" : 1,
     "name" : "Dynamic Dental Edu.",
-    "about" : "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.",
+    "about" : "Sole developer and designer on a team of four to conceptualize and develop a comprehensive dental test prep platform.",
+    "details" : "It features an intuitive frontend and full CMS, with an OAuth2-secured API.",
     "image" : "http://i.imgur.com/BZDibXh.png",
-    "link" : "speech-api/index.html",
+    "link" : "http://dde.staging.com.s3-website-us-east-1.amazonaws.com/#/home",
     "tags" : [
       "freelance",
       "laravel",
@@ -17,65 +18,13 @@
   },
   {
     "id" : 2,
-    "name" : "Hitting Trees with Sticks",
-    "about" : "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.",
-    "image" : "http://i.imgur.com/Z4BUKkY.png",
-    "link" : "http://www.hittingtreeswithsticks.com",
-    "tags" : [
-      "php"
-    ],
-    "background-color" : "#b83325",
-    "color" : "white"
-  },
-  {
-    "id" : 3,
-    "name" : "Rummy",
-    "about" : "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.",
+    "name" : "Chinese RPG",
+    "about" : "Designing a web adventure game that facilitates language learning through well-defined heuristics.",
+    "details" : "Completed two rounds of beta testing at public schools and am now implementing feedback.",
     "image" : "http://i.imgur.com/BZDibXh.png",
-    "link" : "child-rummy-canvas/index.htm",
+    "link" : "http://clg-dev.elasticbeanstalk.com/",
     "tags" : [
-      "game",
-      "javascript",
-      "animations"
-    ],
-    "github" : "https://github.com/dtturcotte/demos/tree/master/child-rummy-canvas",
-    "background-color" : "#deffff",
-    "color" : "black"
-  },
-  {
-    "id" : 4,
-    "name" : "Animated Algorithms",
-    "about" : "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.",
-    "image" : "http://i.imgur.com/BZDibXh.png",
-    "link" : "raphael-js/index.html",
-    "tags" : [
-      "javascript"
-    ],
-    "github" : "https://github.com/dtturcotte/demos/tree/master/raphael-js",
-    "background-color" : "#f79f23",
-    "color" : "white"
-  },
-  {
-    "id" : 5,
-    "name" : "Alexa Voice Shopping",
-    "about" : "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.",
-    "image" : "http://i.imgur.com/BZDibXh.png",
-    "link" : "speech-api/index.html",
-    "tags" : [
-      "node",
-      "iot"
-    ],
-    "github" : "private",
-    "background-color" : "#00b8f1",
-    "color" : "white"
-  },
-  {
-    "id" : 6,
-    "name" : "Chinese Game",
-    "about" : "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.",
-    "image" : "http://i.imgur.com/BZDibXh.png",
-    "link" : "http://www.hittingtreeswithsticks.com",
-    "tags" : [
+      "featured",
       "javascript",
       "laravel",
       "games"
@@ -85,37 +34,58 @@
     "color" : "white"
   },
   {
-    "id" : 7,
-    "name" : "Viewers to Volunteers",
-    "about" : "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.",
+    "id" : 3,
+    "name" : "Alexa Voice Shopping",
+    "about" : "Prototype of an online voice-enabled shopping experience using the Amazon Echo.",
+    "details" : "Contact me to set up a demo through https://echosim.io/",
     "image" : "http://i.imgur.com/BZDibXh.png",
-    "link" : "child-rummy-canvas/index.htm",
+    "link" : "speech-api/index.html",
+    "tags" : [
+      "featured",
+      "node",
+      "iot"
+    ],
+    "github" : "private",
+    "background-color" : "#00b8f1",
+    "color" : "white"
+  },
+  {
+    "id" : 4,
+    "name" : "Viewers to Volunteers",
+    "about" : "Frontend developer on a $1.5m social media site for CBS which promotes community outreach.",
+    "details" : "This project was particularly meaningful for me as volunteerism has played a pivotal role in my life. Ask about it :)",
+    "image" : "http://i.imgur.com/BZDibXh.png",
+    "link" : "https://www.viewerstovolunteers.com/",
     "tags" : [
       "angular",
       "node"
     ],
+    "github" : "private",
     "background-color" : "#deffff",
     "color" : "black"
   },
   {
-    "id" : 8,
-    "name" : "Shake Shack",
-    "about" : "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.",
+    "id" : 5,
+    "name" : "Fuzz Productions Site",
+    "about" : "Lead developer on Fuzz company website frontend/backend overhaul.",
+    "details" : "",
     "image" : "http://i.imgur.com/BZDibXh.png",
-    "link" : "raphael-js/index.html",
+    "link" : "https://fuzzproductions.com/",
     "tags" : [
-      "fuzz",
-      "django"
+      "angular",
+      "laravel"
     ],
-    "background-color" : "#f79f23",
-    "color" : "white"
+    "github" : "private",
+    "background-color" : "#deffff",
+    "color" : "black"
   },
   {
-    "id" : 9,
+    "id" : 6,
     "name" : "Speech App",
-    "about" : "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.",
+    "about" : "Foreign language Speech app to manipulate, narrate, and translate content on the fly.",
+    "details" : "Built custom lexers to break up sentence structure into meaningful parts.",
     "image" : "http://i.imgur.com/BZDibXh.png",
-    "link" : "raphael-js/index.html",
+    "link" : "speech-api/",
     "tags" : [
       "featured",
       "javascript",
@@ -126,29 +96,89 @@
     "color" : "white"
   },
   {
-    "id" : 9,
-    "name" : "Slack Imposter Bots",
-    "about" : "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.",
+    "id" : 7,
+    "name" : "Alexa-Slack Office Assistant",
+    "about" : "Add commands, such as lunch for the week or employee status, through Slack, which can be communicated through the Amazon Echo.",
+    "details" : "For example: \"Alexa, what is lunch for tomorrow?\".",
     "image" : "http://i.imgur.com/BZDibXh.png",
-    "link" : "raphael-js/index.html",
+    "link" : "https://github.com/dtturcotte/AlexaSlack",
     "tags" : [
       "node",
-      "slack apis"
+      "slack apis",
+      "iot"
     ],
-    "github" : "https://github.com/dtturcotte/demos/tree/master/slack_bots",
+    "github" : "https://github.com/dtturcotte/AlexaSlack",
     "background-color" : "#f79f23",
     "color" : "white"
   },
   {
-    "id" : 9,
+    "id" : 8,
     "name" : "Fuzz Labs Blog",
-    "about" : "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.",
+    "about" : "Fully customized CMS and API to share Fuzz's latest technical experiments.",
+    "details" : "I helped with frontend and API development, such as tagging, markdown, and image uploading support.",
     "image" : "http://i.imgur.com/BZDibXh.png",
     "link" : "http://fuzz-labs-dev.s3-website-us-east-1.amazonaws.com/#/",
     "tags" : [
       "react"
     ],
     "github" : "private",
+    "background-color" : "#f79f23",
+    "color" : "white"
+  },
+  {
+    "id" : 9,
+    "name" : "Rummy",
+    "about" : "Recreated one of my favorite card games with Raphael JS for fun and to demo new tech.",
+    "details" : "Features full AI and winning/losing/invalid hand simulations.",
+    "image" : "http://i.imgur.com/BZDibXh.png",
+    "link" : "/child-rummy-canvas",
+    "tags" : [
+      "games",
+      "javascript",
+      "animations"
+    ],
+    "github" : "https://github.com/dtturcotte/demos/tree/master/child-rummy-canvas",
+    "background-color" : "#deffff",
+    "color" : "black"
+  },
+  {
+    "id" : 10,
+    "name" : "Interactive Algorithms",
+    "about" : "A work in progress, I've started recreating animated algorithms to help myself and others understand their complexities.",
+    "details" : "Currently features BFS/DFS tree traversal, and a partially working A* Path Finder (something quite useful in my Chinese game).",
+    "image" : "http://i.imgur.com/BZDibXh.png",
+    "link" : "raphael-js/index.html",
+    "tags" : [
+      "javascript"
+    ],
+    "github" : "https://github.com/dtturcotte/demos/tree/master/raphael-js",
+    "background-color" : "#f79f23",
+    "color" : "white"
+  },
+  {
+    "id" : 11,
+    "name" : "Hitting Trees with Sticks",
+    "about" : "How I got my start into all of this... My baby- a vanilla PHP comics and artwork website.",
+    "details" : "I created this in 2012 to share my comics with the world, and gained 45k fans on Facebook.",
+    "image" : "http://i.imgur.com/Z4BUKkY.png",
+    "link" : "http://www.hittingtreeswithsticks.com",
+    "tags" : [
+      "php"
+    ],
+    "background-color" : "#b83325",
+    "color" : "white"
+  },
+  {
+    "id" : 12,
+    "name" : "Shake Shack",
+    "about" : "As my first Python and Django project, I contributed to CMS and Django Rest Framework API development.",
+    "details" : "",
+    "image" : "http://i.imgur.com/BZDibXh.png",
+    "link" : "raphael-js/index.html",
+    "tags" : [
+      "python",
+      "django"
+    ],
     "background-color" : "#f79f23",
     "color" : "white"
   }

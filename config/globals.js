@@ -13,7 +13,7 @@ module.exports = {
 			},
 			{
 				display : 'work',
-				link : '/'
+				link : '/work'
 			},
 			{
 				display : 'skills',

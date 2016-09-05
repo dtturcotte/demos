@@ -11,6 +11,7 @@
                     <% } %>
                 </div>
                 <p><%= data[i].about %></p>
+                <p><%= data[i].details %></p>
                 <% if (data[i].github && data[i].github !== 'private') { %>
                     <a href="<%= data[i].github %>" target="_blank" class="github_link">
                         <i class="fa fa-2x fa-github bottom-icons github" style="opacity:0" aria-hidden="true"></i>

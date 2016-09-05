@@ -23,7 +23,8 @@ module.exports = function (app, globals, path) {
 	/*
 		Home
 	 */
-	app.get('/', home.index);
+	app.get('/', about.index);
+	app.get('/work', home.index);
 	app.post('/projects', home.projects);
 	app.post('/tags', home.tags);
 	app.get('/about', about.index);

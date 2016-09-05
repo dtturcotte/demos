@@ -52,7 +52,6 @@ hr {
 .link {
   color: blue;
   &:hover {
-    color: #5a73ff;
     cursor: pointer;
   }
 }
@@ -79,7 +78,9 @@ p {
       display: block;
     }
     &.nav {
+      font-size: 17px;
       margin-top: 14px;
+      text-transform: uppercase;
     }
   }
 }
@@ -93,6 +94,7 @@ a {
   text-decoration: none !important;
   color: inherit;
 }
+
 .box-shadow {
   box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
 }

@@ -6,9 +6,11 @@
 
         <div class="nav-items">
             <% for(var i=0; i < static.nav.length; i++) { %>
-                <div class="nav-item">
-                    <a href="<%= static.nav[i].link %>" class="nav-link"><%= static.nav[i].display %></a>
-                </div>
+                <a href="<%= static.nav[i].link %>" class="nav-link">
+                    <div class="nav-item">
+                        <span data-url="<%= static.nav[i].link %>"><%= static.nav[i].display %></span>
+                    </div>
+                </a>
             <% } %>
         </div>
 

@@ -4,4 +4,13 @@
   position: absolute;
   left: 0;
   right: 0;
+  img {
+    width: 40px;
+    filter: brightness(100%);
+    transition: .3s ease-in-out;
+    &:hover {
+      filter: brightness(120%);
+      cursor: pointer;
+    }
+  }
 }
