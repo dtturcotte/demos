@@ -28,6 +28,7 @@ module.exports = function (app, globals, path) {
 	app.post('/tags', home.tags);
 	app.get('/about', about.index);
 	app.get('/about/verify', about.quiz);
+	app.get('/about/sanitize', about.sanitize);
 	app.get('/skills', skills.index);
 
 	/*

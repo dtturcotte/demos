@@ -4,6 +4,16 @@ var d3 = require('d3'),
 $(document).ready(function () {
 
 	localStorage.clear();
+
+
+	//$.ajax({
+	//	url: 'https://musicquiz-79603.firebaseio.com/.json',
+	//	type: 'DELETE',
+	//	success: function(result) {
+	//		// Do something with the result
+	//	}
+	//});
+
 	if (localStorage.getItem('quiz_answered') === null) {
 
 		$('#music_quiz_input').keypress(function (e) {
@@ -23,17 +33,55 @@ $(document).ready(function () {
 	}
 
 	function sendAnswer() {
-		var answer = JSON.stringify({
-			'guess': $('#music_quiz_input').val()
-		});
 
-		$.post('https://musicquiz-79603.firebaseio.com/.json', answer, function (res) {
-			$.get('https://musicquiz-79603.firebaseio.com/.json', generateCloud);
+		if ($('#music_quiz_input').val() !== '') {
 
-			$.get('/about/verify?guess=' + $('#music_quiz_input').val(), function (result) {
-				appendResultText(result);
+			sanitize($('#music_quiz_input').val()).then(function (status) {
+
+				if (status === 'okay') {
+
+					var input = $('#music_quiz_input').val();
+
+					var answer = JSON.stringify({
+						'guess': input
+					});
+
+					$.post('https://musicquiz-79603.firebaseio.com/.json', answer, function (res) {
+						$.get('https://musicquiz-79603.firebaseio.com/.json', generateCloud);
+
+						$.get('/about/verify?guess=' + $('#music_quiz_input').val(), function (result) {
+							appendResultText(result);
+						});
+					});
+				} else if (status === 'bad word') {
+					showMessage('<h3 class="incorrect">' + $('#music_quiz_input').val() + ' is naughty! Naughty naughty...</h3>');
+				} else {
+					showMessage('<h3 class="incorrect">Please provide an answer!</h3>');
+				}
 			});
-		});
+		} else {
+			showMessage('<h3 class="incorrect">Please provide an answer!</h3>');
+		}
+	}
+
+	function showMessage(message) {
+
+		if ($('#result').is(':empty')) {
+
+			$('#result').html(message);
+
+			var newTimeout = setTimeout(function () {
+				clearTimeout(newTimeout);
+				$('#result').html('');
+				$('#music_quiz_input').val('');
+			}, 4000)
+		} else {
+			alert('Please do not spam :)');
+		}
+	}
+
+	function sanitize(input) {
+		return $.get('/about/sanitize?word=' + input);
 	}
 
 	function generateCloud(res) {
@@ -56,12 +104,14 @@ $(document).ready(function () {
 				if ($.inArray(el, unique_words) === -1) unique_words.push(el);
 			});
 
+			console.log('hey', font_sizes);
+
 			var fill = d3.scale.category20();
 
 			var layout = cloud()
 				.size([500, 500])
 				.words(unique_words.map(function (d) {
-					return {text: d, size: font_sizes[d] * 5, test: "haha"};
+					return {text: d, size: font_sizes[d] * 10};
 				})
 			)
 				.padding(5)
@@ -70,7 +120,7 @@ $(document).ready(function () {
 				})
 				.font("Impact")
 				.fontSize(function (d) {
-					console.log('size', d.size);
+					console.log('size', d.text, d.size);
 					return d.size;
 				})
 				.on("end", draw);
@@ -89,7 +139,8 @@ $(document).ready(function () {
 				.data(words)
 				.enter().append("text")
 				.style("font-size", function(d) {
-					d.size = (d.size >= 80) ? 80 : d.size;
+					console.log('D', d);
+					d.size = (d.size >= 100) ? 100 : d.size;
 					return d.size + "px";
 				})
 				.style("font-family", "Impact")
