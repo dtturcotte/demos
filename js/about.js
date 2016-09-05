@@ -5,7 +5,6 @@ $(document).ready(function () {
 
 	localStorage.clear();
 
-
 	//$.ajax({
 	//	url: 'https://musicquiz-79603.firebaseio.com/.json',
 	//	type: 'DELETE',
@@ -104,23 +103,19 @@ $(document).ready(function () {
 				if ($.inArray(el, unique_words) === -1) unique_words.push(el);
 			});
 
-			console.log('hey', font_sizes);
-
 			var fill = d3.scale.category20();
 
 			var layout = cloud()
 				.size([500, 500])
 				.words(unique_words.map(function (d) {
 					return {text: d, size: font_sizes[d] * 10};
-				})
-			)
+				}))
 				.padding(5)
 				.rotate(function () {
 					return ~~(Math.random() * 2) * 90;
 				})
 				.font("Impact")
 				.fontSize(function (d) {
-					console.log('size', d.text, d.size);
 					return d.size;
 				})
 				.on("end", draw);
@@ -139,7 +134,6 @@ $(document).ready(function () {
 				.data(words)
 				.enter().append("text")
 				.style("font-size", function(d) {
-					console.log('D', d);
 					d.size = (d.size >= 100) ? 100 : d.size;
 					return d.size + "px";
 				})
@@ -158,7 +152,7 @@ $(document).ready(function () {
 
 		$('#quiz').fadeIn('slow');
 		$('#music_quiz_input_container').fadeOut('fast');
-		var $result = (res) ? $('<h3 class="correct">+10pts! Mr. Mark Knopfler!</h3>') : $('<h3 class="incorrect">Nope. Was it my crappy drawing?</h3>'),
+		var $result = (res) ? $('<h3 class="correct shadow">+10pts! It\'s Mr. Mark Knopfler!</h3>') : $('<h3 class="incorrect shadow">Nope. Was it my crappy drawing?</h3>'),
 			$others = $('<p>Here\'s what others have been guessing:</p>');
 
 		if (localStorage.getItem('quiz_answered') === null) {

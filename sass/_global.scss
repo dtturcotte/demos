@@ -41,6 +41,14 @@ body {
   }
 }
 
+hr {
+  &.style-two {
+    border: 0;
+    height: 1px;
+    background-image: linear-gradient(to right,transparent,rgb(71, 71, 72),transparent);
+  }
+}
+
 .link {
   color: blue;
   &:hover {
@@ -51,9 +59,15 @@ body {
 
 .incorrect {
   color: #ff7a70;
+  &.shadow {
+    text-shadow: 0 2px 4px rgb(103, 35, 30);
+  }
 }
 .correct {
-  color: #5fb24d;
+  color: #76d462;
+  &.shadow {
+    text-shadow: 0 2px 4px rgb(33, 72, 24);
+  }
 }
 
 p {
