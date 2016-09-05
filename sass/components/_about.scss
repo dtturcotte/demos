@@ -21,15 +21,16 @@
         min-width: 640px;
         max-width: 900px;
         margin-top: -100px;
+//        float: right;
       }
       #guess_who {
         max-width: 800px;
         width: 80%;
         transition: .5s ease-in-out;
-        filter: grayscale(70%);
+//        filter: grayscale(70%);
         &:hover {
           transition: .5s ease-in-out;
-          filter: grayscale(0%);
+//          filter: grayscale(0%);
         }
       }
       &.left {
