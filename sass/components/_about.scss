@@ -21,16 +21,16 @@
         min-width: 640px;
         max-width: 900px;
         margin-top: -100px;
+        filter: contrast(120%);
 //        float: right;
       }
       #guess_who {
         max-width: 800px;
         width: 80%;
-        transition: .5s ease-in-out;
-//        filter: grayscale(70%);
+        transition: 1s ease-in-out;
+        filter: contrast(100%);
         &:hover {
-          transition: .5s ease-in-out;
-//          filter: grayscale(0%);
+          filter: contrast(150%);
         }
       }
       &.left {
@@ -41,7 +41,7 @@
         color: #fff;
         line-height: 1.4;
         &.music {
-          width: 50%;
+          width: 45%;
           height: auto;
         }
         .text-block {
@@ -57,7 +57,7 @@
         position: relative;
         float: right;
         &.music {
-          width: 40%;
+          width: 55%;
           display: inline-block;
           position: relative;
           float: right;

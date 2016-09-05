@@ -103,19 +103,27 @@ $(document).ready(function () {
 				if ($.inArray(el, unique_words) === -1) unique_words.push(el);
 			});
 
+			var properties = unique_words.map(function (w) {
+				return {
+					text : w,
+					size : (font_sizes[w] * 20 <= 80) ? font_sizes[w] * 20 : 80
+				}
+			});
+
+			console.log('prop', properties);
+
 			var fill = d3.scale.category20();
 
 			var layout = cloud()
-				.size([500, 500])
-				.words(unique_words.map(function (d) {
-					return {text: d, size: font_sizes[d] * 10};
-				}))
+				.size([700, 700])
+				.words(properties)
 				.padding(5)
 				.rotate(function () {
 					return ~~(Math.random() * 2) * 90;
 				})
 				.font("Impact")
 				.fontSize(function (d) {
+					console.log('1', d);
 					return d.size;
 				})
 				.on("end", draw);
@@ -125,6 +133,7 @@ $(document).ready(function () {
 		}
 
 		function draw (words) {
+			console.log('draw', words);
 			d3.select("#quiz").append("svg")
 				.attr("width", layout.size()[0])
 				.attr("height", layout.size()[1])
@@ -134,7 +143,7 @@ $(document).ready(function () {
 				.data(words)
 				.enter().append("text")
 				.style("font-size", function(d) {
-					d.size = (d.size >= 100) ? 100 : d.size;
+					console.log('2', d);
 					return d.size + "px";
 				})
 				.style("font-family", "Impact")
@@ -152,7 +161,7 @@ $(document).ready(function () {
 
 		$('#quiz').fadeIn('slow');
 		$('#music_quiz_input_container').fadeOut('fast');
-		var $result = (res) ? $('<h3 class="correct shadow">+10pts! It\'s Mr. Mark Knopfler!</h3>') : $('<h3 class="incorrect shadow">Nope. Was it my crappy drawing?</h3>'),
+		var $result = (res) ? $('<h3 class="correct shadow">+10pts! It\'s Mr. Mark Knopfler!</h3>') : $('<h3 class="incorrect shadow">Nope. Was it my crappy drawing? :(</h3>'),
 			$others = $('<p>Here\'s what others have been guessing:</p>');
 
 		if (localStorage.getItem('quiz_answered') === null) {
