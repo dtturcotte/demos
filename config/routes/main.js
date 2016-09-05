@@ -3,6 +3,7 @@ module.exports = function (app, globals, path) {
 	var home = require(path.join(globals.paths.controllers, 'home.controller'));
 	var about = require(path.join(globals.paths.controllers, 'about.controller'));
 	var skills = require(path.join(globals.paths.controllers, 'skills.controller'));
+	var contact = require(path.join(globals.paths.controllers, 'contact.controller'));
 	var alexa = require(path.join(globals.paths.controllers, 'alexa.controller'));
 
 	var dantebot = require('../../slack_bots/dantebot');
@@ -31,6 +32,7 @@ module.exports = function (app, globals, path) {
 	app.get('/about/verify', about.quiz);
 	app.get('/about/sanitize', about.sanitize);
 	app.get('/skills', skills.index);
+	app.get('/contact', contact.index);
 
 	/*
 		Slack Bots

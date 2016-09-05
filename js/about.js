@@ -31,9 +31,11 @@ $(document).ready(function () {
 	}
 
 	function sendAnswer() {
-
-		if ($('#music_quiz_input').val() !== '') {
-
+		if ($('#music_quiz_input').val() === '') {
+			showMessage('<h3 class="incorrect">Please provide an answer!</h3>');
+		} else if (($('#music_quiz_input').val().length > 50)) {
+			showMessage('<h3 class="incorrect">Answer should be shorter than 100 characters!</h3>');
+		} else {
 			sanitize($('#music_quiz_input').val()).then(function (status) {
 
 				if (status === 'okay') {
@@ -54,8 +56,6 @@ $(document).ready(function () {
 					showMessage('<h3 class="incorrect">Please provide an answer!</h3>');
 				}
 			});
-		} else {
-			showMessage('<h3 class="incorrect">Please provide an answer!</h3>');
 		}
 	}
 
