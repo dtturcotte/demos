@@ -8,16 +8,16 @@ module.exports = {
 		author : 'daniel turcotte',
 		nav: [
 			{
+				display : 'hello',
+				link : '/about'
+			},
+			{
 				display : 'work',
 				link : '/'
 			},
 			{
 				display : 'skills',
 				link : '/skills'
-			},
-			{
-				display : 'about',
-				link : '/about'
 			},
 			{
 				display : 'contact',

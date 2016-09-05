@@ -3,7 +3,7 @@ var d3 = require('d3'),
 
 $(document).ready(function () {
 
-	localStorage.clear();
+	//localStorage.clear();
 
 	//$.ajax({
 	//	url: 'https://musicquiz-79603.firebaseio.com/.json',
@@ -28,7 +28,6 @@ $(document).ready(function () {
 
 	} else {
 		$.get('https://musicquiz-79603.firebaseio.com/.json', generateCloud);
-		appendResultText(localStorage.getItem('quiz_answered'));
 	}
 
 	function sendAnswer() {
@@ -48,9 +47,6 @@ $(document).ready(function () {
 					$.post('https://musicquiz-79603.firebaseio.com/.json', answer, function (res) {
 						$.get('https://musicquiz-79603.firebaseio.com/.json', generateCloud);
 
-						$.get('/about/verify?guess=' + $('#music_quiz_input').val(), function (result) {
-							appendResultText(result);
-						});
 					});
 				} else if (status === 'bad word') {
 					showMessage('<h3 class="incorrect">' + $('#music_quiz_input').val() + ' is naughty! Naughty naughty...</h3>');
@@ -103,27 +99,22 @@ $(document).ready(function () {
 				if ($.inArray(el, unique_words) === -1) unique_words.push(el);
 			});
 
-			var properties = unique_words.map(function (w) {
-				return {
-					text : w,
-					size : (font_sizes[w] * 20 <= 80) ? font_sizes[w] * 20 : 80
-				}
-			});
-
-			console.log('prop', properties);
-
 			var fill = d3.scale.category20();
 
 			var layout = cloud()
-				.size([700, 700])
-				.words(properties)
+				.size([700, 500])
+				.words(unique_words.map(function (w) {
+					return {
+						text : w,
+						size : (font_sizes[w] * 12 <= 80) ? font_sizes[w] * 12 : 80
+					}
+				}))
 				.padding(5)
 				.rotate(function () {
 					return ~~(Math.random() * 2) * 90;
 				})
 				.font("Impact")
 				.fontSize(function (d) {
-					console.log('1', d);
 					return d.size;
 				})
 				.on("end", draw);
@@ -133,7 +124,6 @@ $(document).ready(function () {
 		}
 
 		function draw (words) {
-			console.log('draw', words);
 			d3.select("#quiz").append("svg")
 				.attr("width", layout.size()[0])
 				.attr("height", layout.size()[1])
@@ -143,7 +133,6 @@ $(document).ready(function () {
 				.data(words)
 				.enter().append("text")
 				.style("font-size", function(d) {
-					console.log('2', d);
 					return d.size + "px";
 				})
 				.style("font-family", "Impact")
@@ -155,14 +144,18 @@ $(document).ready(function () {
 				.text(function(d) { return d.text; });
 		};
 
+		$.get('/about/verify?guess=' + $('#music_quiz_input').val(), function (result) {
+			appendResultText(guesses, result);
+		});
+
 	}
 
-	function appendResultText (res) {
+	function appendResultText (guesses, res) {
 
 		$('#quiz').fadeIn('slow');
 		$('#music_quiz_input_container').fadeOut('fast');
-		var $result = (res) ? $('<h3 class="correct shadow">+10pts! It\'s Mr. Mark Knopfler!</h3>') : $('<h3 class="incorrect shadow">Nope. Was it my crappy drawing? :(</h3>'),
-			$others = $('<p>Here\'s what others have been guessing:</p>');
+		var $result = (res) ? $('<p class="heading correct shadow">+10pts! That\'s the way you do it.</p>') : $('<p class="heading incorrect shadow">Nope. That ain\'t workin\'</p>'),
+			$others = $('<p>' + guesses.length + ' others have guessed so far:</p>');
 
 		if (localStorage.getItem('quiz_answered') === null) {
 			localStorage.setItem('quiz_answered', res);

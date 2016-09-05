@@ -11,7 +11,7 @@ body {
   background-image:
   linear-gradient(
     to right,
-    #2a282b, rgba(0, 0, 0, 0) 30%
+    #191818, rgba(0, 0, 0, 0) 30%
   );
 }
 .text-block {
@@ -166,14 +166,14 @@ pre code {
   position: relative;
   color: black;
   &.dark-gray {
-    background-color: #2a282b;
+    background-color: #191818;
   }
   &.black {
     background-image: radial-gradient(#474548, #2a282b);
     color: white;
   }
   &.pure-black {
-    background-color: #080706;
+    background-color: #101010;
     color: white;
   }
   &.dark-black {
