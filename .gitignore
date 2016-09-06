@@ -5,5 +5,4 @@
 !.elasticbeanstalk/*.global.yml
 
 node_modules/
-bower_components/
 data/assets/psds/
