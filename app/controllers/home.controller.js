@@ -47,7 +47,7 @@ module.exports = {
 			return p;
 		});
 
-		projects_limit.length = 6;
+		//projects_limit.length = 6;
 
 		res.render('index', {
 			data : projects_limit,
@@ -87,7 +87,7 @@ module.exports = {
 			var tag_names = tags.map(function (t) {
 				return t.name;
 			});
-			tag_names.length = 6;
+			//tag_names.length = 6;
 			filter_projects = getProjects(tag_names);
 		}
 		/*

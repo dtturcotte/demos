@@ -54,13 +54,19 @@
       vertical-align: top;
       transition: font-weight .5s, width .5s, height .5s, background-color .5s, color .5s, transform .5s;
       height: 300px;
-      width: 29%;
+      width: 28%;
       margin: 22px;
       background-color: #fff;
       overflow: hidden;
       color: white;
       box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
       border-radius: 3px;
+      @include break(tabletmax) {
+        width: 42%;
+      }
+      @include break(handset) {
+        width: 90%;
+      }
       &:hover {
         cursor: pointer;
         .info {

@@ -4,7 +4,7 @@
     "name" : "Dynamic Dental Edu.",
     "about" : "Sole developer and designer on a team of four to conceptualize and develop a comprehensive dental test prep platform.",
     "details" : "It features an intuitive frontend and full CMS, with an OAuth2-secured API.",
-    "image" : "http://i.imgur.com/BZDibXh.png",
+    "image" : "./data/assets/project_images/dde.png",
     "link" : "http://dde.staging.com.s3-website-us-east-1.amazonaws.com/#/home",
     "tags" : [
       "freelance",
@@ -21,7 +21,8 @@
     "name" : "Chinese RPG",
     "about" : "Designing a web adventure game that facilitates language learning through well-defined heuristics.",
     "details" : "Completed two rounds of beta testing at public schools and am now implementing feedback.",
-    "image" : "http://i.imgur.com/BZDibXh.png",
+    "image" : "./data/assets/project_images/clg.png",
+
     "link" : "http://clg-dev.elasticbeanstalk.com/",
     "tags" : [
       "featured",
@@ -38,7 +39,7 @@
     "name" : "Alexa Voice Shopping",
     "about" : "Prototype of an online voice-enabled shopping experience using the Amazon Echo.",
     "details" : "Contact me to set up a demo through https://echosim.io/",
-    "image" : "http://i.imgur.com/BZDibXh.png",
+    "image" : "./data/assets/project_images/alexa.png",
     "link" : "https://echosim.io/",
     "tags" : [
       "featured",
@@ -54,7 +55,7 @@
     "name" : "Viewers to Volunteers",
     "about" : "Frontend developer on a $1.5m social media site for CBS which promotes community outreach.",
     "details" : "This project was particularly meaningful for me as volunteerism has played a pivotal role in my life. Ask about it :)",
-    "image" : "http://i.imgur.com/BZDibXh.png",
+    "image" : "./data/assets/project_images/v2v.png",
     "link" : "https://www.viewerstovolunteers.com/",
     "tags" : [
       "angular",
@@ -69,7 +70,7 @@
     "name" : "Fuzz Productions Site",
     "about" : "Lead developer on Fuzz company website frontend/backend overhaul.",
     "details" : "",
-    "image" : "http://i.imgur.com/BZDibXh.png",
+    "image" : "./data/assets/project_images/fuzz.png",
     "link" : "https://fuzzproductions.com/",
     "tags" : [
       "angular",
@@ -84,7 +85,7 @@
     "name" : "Speech App",
     "about" : "Foreign language Speech app to manipulate, narrate, and translate content on the fly.",
     "details" : "Built custom lexers to break up sentence structure into meaningful parts.",
-    "image" : "http://i.imgur.com/BZDibXh.png",
+    "image" : "./data/assets/project_images/speech_api.png",
     "link" : "speech-api/",
     "tags" : [
       "featured",
@@ -100,7 +101,7 @@
     "name" : "Alexa-Slack Office Assistant",
     "about" : "Add commands, such as lunch for the week or employee status, through Slack, which can be communicated through the Amazon Echo.",
     "details" : "For example: \"Alexa, what is lunch for tomorrow?\".",
-    "image" : "http://i.imgur.com/BZDibXh.png",
+    "image" : "./data/assets/project_images/alexa_slack.png",
     "link" : "https://github.com/dtturcotte/AlexaSlack",
     "tags" : [
       "node",
@@ -113,11 +114,11 @@
   },
   {
     "id" : 8,
-    "name" : "Fuzz Labs Blog",
-    "about" : "Fully customized CMS and API to share Fuzz's latest technical experiments.",
-    "details" : "I helped with frontend and API development, such as tagging, markdown, and image uploading support.",
-    "image" : "http://i.imgur.com/BZDibXh.png",
-    "link" : "http://fuzz-labs-dev.s3-website-us-east-1.amazonaws.com/#/",
+    "name" : "Chinese RPG Teacher's Dashboard",
+    "about" : "Fully customized CMS and API to help teacher's gauge their students learning progress.",
+    "details" : "",
+    "image" : "./data/assets/project_images/clg_dashboard.png",
+    "link" : "http://clg-dashboard.com.s3-website-us-east-1.amazonaws.com/#/",
     "tags" : [
       "react"
     ],
@@ -130,7 +131,7 @@
     "name" : "Rummy",
     "about" : "Recreated one of my favorite card games with Raphael JS for fun and to demo new tech.",
     "details" : "Features full AI and winning/losing/invalid hand simulations.",
-    "image" : "http://i.imgur.com/BZDibXh.png",
+    "image" : "./data/assets/project_images/rummy.png",
     "link" : "/child-rummy-canvas",
     "tags" : [
       "games",
@@ -146,7 +147,7 @@
     "name" : "Interactive Algorithms",
     "about" : "A work in progress, I've started recreating animated algorithms to help myself and others understand their complexities.",
     "details" : "Currently features BFS/DFS tree traversal, and a partially working A* Path Finder (something quite useful in my Chinese game).",
-    "image" : "http://i.imgur.com/BZDibXh.png",
+    "image" : "./data/assets/project_images/tree.png",
     "link" : "raphael-js/index.html",
     "tags" : [
       "javascript"
@@ -160,7 +161,7 @@
     "name" : "Hitting Trees with Sticks",
     "about" : "How I got my start into all of this... My baby- a vanilla PHP comics and artwork website.",
     "details" : "I created this in 2012 to share my comics with the world, and gained 45k fans on Facebook.",
-    "image" : "http://i.imgur.com/Z4BUKkY.png",
+    "image" : "./data/assets/project_images/htws.png",
     "link" : "http://www.hittingtreeswithsticks.com",
     "tags" : [
       "php"
@@ -174,7 +175,7 @@
     "name" : "Shake Shack",
     "about" : "As my first Python and Django project, I contributed to CMS and Django Rest Framework API development.",
     "details" : "",
-    "image" : "http://i.imgur.com/BZDibXh.png",
+    "image" : "./data/assets/project_images/shake_shack.png",
     "link" : "https://www.shakeshack.com/",
     "tags" : [
       "python",
