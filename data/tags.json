@@ -30,7 +30,7 @@
     "name" : "angular",
     "type" : "skill",
     "icon" : "../data/assets/angular.png",
-    "strength" : 9,
+    "strength" : 8,
     "colors" : {
       "background" : "rgba(255, 99, 132, 0.2)",
       "border" : "rgba(255,99,132,1)"
@@ -40,7 +40,7 @@
     "name" : "javascript",
     "type" : "skill",
     "icon" : "../data/assets/javascript.png",
-    "strength" : 8,
+    "strength" : 7,
     "colors" : {
       "background" : "rgba(54, 162, 235, 0.2)",
       "border" : "rgba(54, 162, 235, 1)"
@@ -50,7 +50,7 @@
     "name" : "animations",
     "type" : "skill",
     "icon" : "../data/assets/animations.png",
-    "strength" : 8,
+    "strength" : 6,
     "colors" : {
       "background" : "rgba(54, 162, 235, 0.2)",
       "border" : "rgba(54, 162, 235, 1)"
@@ -69,7 +69,7 @@
   {
     "name" : "google apis",
     "icon" : "../data/assets/google.png",
-    "strength" : 6,
+    "strength" : 5,
     "colors" : {
       "background" : "rgba(255, 206, 86, 0.2)",
       "border" : "rgba(255, 206, 86, 1)"
@@ -78,7 +78,7 @@
   {
     "name" : "slack apis",
     "icon" : "../data/assets/slack.png",
-    "strength" : 6,
+    "strength" : 5,
     "colors" : {
       "background" : "rgba(255, 206, 86, 0.2)",
       "border" : "rgba(255, 206, 86, 1)"
@@ -98,7 +98,7 @@
     "name" : "sass",
     "type" : "skill",
     "icon" : "../data/assets/sass.png",
-    "strength" : 7,
+    "strength" : 6,
     "colors" : {
       "background" : "rgba(255, 159, 64, 0.2)",
       "border" : "rgba(255, 159, 64, 1)"
@@ -108,7 +108,7 @@
     "name" : "react",
     "type" : "skill",
     "icon" : "../data/assets/react.png",
-    "strength" : 6,
+    "strength" : 4,
     "colors" : {
       "background" : "rgba(200, 99, 132, 0.2)",
       "border" : "rgba(200,99,132,1)"
@@ -128,7 +128,7 @@
     "name" : "laravel",
     "type" : "skill",
     "icon" : "../data/assets/laravel.png",
-    "strength" : 8,
+    "strength" : 7,
     "colors" : {
       "background" : "rgba(255, 206, 86, 0.2)",
       "border" : "rgba(255, 206, 86, 1)"
