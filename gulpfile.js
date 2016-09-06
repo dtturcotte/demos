@@ -31,10 +31,6 @@ gulp.task('js', function() {
 		.pipe(gulp.dest('build/js'))
 });
 
-gulp.task('build', function() {
-	gulp.run('css');
-});
-
 gulp.task('build-dev', function() {
 	gulp.run('css');
 	gulp.run('js');

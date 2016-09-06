@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "gulp": "gulp",
-    "start": "gulp build && node app.js",
+    "start": "node app.js",
     "start:dev": "browserify ./js/about.js -o ./build/js/bundle.js && gulp build-dev"
   },
   "author": "",

@@ -39,7 +39,7 @@
     "about" : "Prototype of an online voice-enabled shopping experience using the Amazon Echo.",
     "details" : "Contact me to set up a demo through https://echosim.io/",
     "image" : "http://i.imgur.com/BZDibXh.png",
-    "link" : "speech-api/index.html",
+    "link" : "https://echosim.io/",
     "tags" : [
       "featured",
       "node",
@@ -175,7 +175,7 @@
     "about" : "As my first Python and Django project, I contributed to CMS and Django Rest Framework API development.",
     "details" : "",
     "image" : "http://i.imgur.com/BZDibXh.png",
-    "link" : "raphael-js/index.html",
+    "link" : "https://www.shakeshack.com/",
     "tags" : [
       "python",
       "django"
