@@ -9,8 +9,8 @@
   width: 175px;
   margin-top: 15px;
   margin-bottom: 10px;
-  -webkit-transition: width .5s, height .5s, background-color .5s, color .5s, -webkit-transform .5s;
-  transition: width .5s, height .5s, background-color .5s, color .5s, transform .5s;
+  -webkit-transition: border .5s, width .5s, height .5s, background-color .5s, color .5s, -webkit-transform .5s;
+  transition: border .5s, width .5s, height .5s, background-color .5s, color .5s, transform .5s;
   &:hover {
     cursor: pointer;
   }
@@ -42,6 +42,15 @@
     &:hover {
       background: white;
       color: black;
+    }
+  }
+  &.blue-border {
+    border: 1px solid #2377c7;
+    background: none;
+    color: #cde0f3;
+    text-shadow: 0 2px 4px rgba(0,0,0,.3);
+    &:hover {
+      border: 1px solid #61a4c7;
     }
   }
   &.black-border {
