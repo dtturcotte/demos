@@ -2,6 +2,19 @@
 <html lang="en">
 	<head>
         <% include ../partials/head %>
+
+        <script>
+            $(document).ready(function () {
+
+                $('#copy-email').on('click', function () {
+                    var $temp = $("<input>");
+                    $("body").append($temp);
+                    $temp.val($('#email-address').text()).select();
+                    document.execCommand("copy");
+                    $temp.remove();
+                });
+            });
+        </script>
     </head>
 	<body>
 		<div class="app-wrapper">
@@ -10,20 +23,23 @@
             </header>
 
             <div class="contact">
-                <div class="full-section light lg center of-hidden height">
-                    <section class="content small overlay home">
-                        <h1 class="text-shadow">Do the needful</h1>
-                        <p class="heading">I have leveraged my full-stack experience to build anything from comprehensive test prep platforms to Alexa voice ordering beer experiences</p>
-
+                <div class="full-section light center of-hidden height small">
+                    <section class="content small overlay">
+                        <h1 class="text-shadow">Say hello!</h1>
+                        <p class="heading block">For questions, concerns, life stories, please contact me here:</p>
                     </section>
                 </div>
                 <div class="strip smallest blue gradient border"></div>
-                <div class="full-section center white">
-                    <a href="/work">
-                        <button class="buttons large black-border">Check out my work!</button>
-                    </a>
+                <div class="full-section lg center white">
+                    <div class="content-block">
+                        <img class="email-icon" src="../../../data/assets/email.png"/>
+                        <p id="email-address" class="heading vertical-middle">dthusky@gmail.com</p>
+                    </div>
+                    <button class="buttons black-border" id="copy-email">Copy email</button>
                 </div>
+
             </div>
+            <hr>
             <footer>
                 <% include ../partials/footer %>
             </footer>
