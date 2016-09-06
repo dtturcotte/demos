@@ -115,7 +115,7 @@
   {
     "id" : 8,
     "name" : "Chinese RPG Teacher's Dashboard",
-    "about" : "Fully customized CMS and API to help teacher's gauge their students learning progress.",
+    "about" : "Fully customized CMS and API to help teachers gauge their students learning progress.",
     "details" : "",
     "image" : "./data/assets/project_images/clg_dashboard.png",
     "link" : "http://clg-dashboard.com.s3-website-us-east-1.amazonaws.com/#/",

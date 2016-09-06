@@ -4,7 +4,7 @@ var d3 = require('d3'),
 
 $(document).ready(function () {
 
-	//localStorage.clear();
+	localStorage.clear();
 
 	//$.ajax({
 	//	url: 'https://musicquiz-79603.firebaseio.com/.json',
