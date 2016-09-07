@@ -161,7 +161,7 @@ $(document).ready(function () {
 	function appendResultText (guesses, res) {
 
 		$('#quiz').fadeIn('slow');
-		$('#music_quiz_input_container').fadeOut('fast');
+		$('#music_quiz_input_container').remove();
 		var $result = (res) ? $('<p class="heading correct shadow">+10pts! That\'s the way you do it.</p>') : $('<p class="heading incorrect shadow">Nope. That ain\'t workin\'</p>'),
 			$others = $('<p>' + guesses.length + ' others have guessed so far:</p>');
 

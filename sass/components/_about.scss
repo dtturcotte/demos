@@ -74,6 +74,9 @@
           position: relative;
           float: right;
           text-align: left;
+          .inner-text-block {
+            width: 75%;
+          }
         }
         .overlay {
           height: 350px;
