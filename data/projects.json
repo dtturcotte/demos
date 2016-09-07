@@ -37,7 +37,7 @@
   {
     "id" : 3,
     "name" : "Alexa Voice Shopping",
-    "about" : "Prototype of an online voice-enabled shopping experience using the Amazon Echo.",
+    "about" : "Mock prototype of an online voice-enabled shopping experience that I built for Anheuser-Busch using the Amazon Echo.",
     "details" : "Contact me to set up a demo through https://echosim.io/.",
     "image" : "./data/assets/project_images/alexa.png",
     "link" : "https://echosim.io/",
@@ -148,7 +148,8 @@
     "image" : "./data/assets/project_images/tree.png",
     "link" : "raphael-js/index.html",
     "tags" : [
-      "javascript"
+      "javascript",
+      "animations"
     ],
     "github" : "https://github.com/dtturcotte/demos/tree/master/raphael-js",
     "background-color" : "#f79f23",
