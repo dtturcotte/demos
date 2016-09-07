@@ -69,7 +69,8 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
 				var request =
 					(function (i) {
-						$.get('https://www.googleapis.com/language/translate/v2?key=AIzaSyCl7D63jOipGzu__0bwfyCNvQ8TTdUSI3o&source=en&target=' + lang + '&q=' + text,
+						console.log('lang', lang, text);
+						$.get('https://www.googleapis.com/language/translate/v2?key=AIzaSyAXbRdkAHVXEobDVGkOePwDGMk1mKNdey4&source=en&target=' + lang + '&q=' + text,
 							function (json) {
 								self.content[i].content.push(
 									{
