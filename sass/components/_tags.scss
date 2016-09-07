@@ -16,20 +16,18 @@
     border-radius: 3px;
     background-color: rgba(228, 225, 220,.7);
     border: thin solid #c3c3c3;
-    -webkit-transition: width .5s, height .5s, background-color .5s, color .5s, -webkit-transform .5s;
     transition: width .5s, height .5s, background-color .5s, color .5s, transform .5s;
+    font-size: 18px;
     span {
-      margin-top: 3px;
       display: inline-block;
     }
     img {
       border: none;
       opacity: 1;
-      width: 25px;
-      height: 25px;
+      width: 30px;
+      height: 30px;
       vertical-align: top;
       padding-right: 4px;
-      margin-top: -2px;
       box-sizing: content-box !important;
     }
     &:hover {
