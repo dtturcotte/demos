@@ -3,7 +3,7 @@ $(document).ready(function () {
 	var tags = [],
 		all_tags_loaded = false;
 
-	$('#see-more-tags').on('click', function () {
+	$('#see-more-tags, #see-more-projects').one('click', function () {
 		setTags('all');
 	});
 
@@ -29,7 +29,8 @@ $(document).ready(function () {
 
 		$.post('/tags', function (res) {
 			$('#tag-container').html(res);
-			$('#see-more-tags').hide();
+			console.log('hiding');
+			$('#see-more-tags, #see-more-projects').hide();
 			setProjects(tags);
 			bindTagClick();
 			all_tags_loaded = true;

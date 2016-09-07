@@ -20,7 +20,7 @@
     "id" : 2,
     "name" : "Chinese RPG",
     "about" : "Designing a web adventure game that facilitates language learning through well-defined heuristics.",
-    "details" : "Completed two rounds of beta testing at public schools and am now implementing feedback.",
+    "details" : "Implemented speech recognition and native pronunciation to test users' oral and listening skills.",
     "image" : "./data/assets/project_images/clg.png",
 
     "link" : "http://clg-dev.elasticbeanstalk.com/",
@@ -38,7 +38,7 @@
     "id" : 3,
     "name" : "Alexa Voice Shopping",
     "about" : "Prototype of an online voice-enabled shopping experience using the Amazon Echo.",
-    "details" : "Contact me to set up a demo through https://echosim.io/",
+    "details" : "Contact me to set up a demo through https://echosim.io/.",
     "image" : "./data/assets/project_images/alexa.png",
     "link" : "https://echosim.io/",
     "tags" : [
@@ -53,7 +53,7 @@
   {
     "id" : 4,
     "name" : "Viewers to Volunteers",
-    "about" : "Frontend developer on a $1.5m social media site for CBS which promotes community outreach.",
+    "about" : "Frontend developer on a large-contract social media site for CBS which promotes community outreach.",
     "details" : "This project was particularly meaningful for me as volunteerism has played a pivotal role in my life. Ask about it :)",
     "image" : "./data/assets/project_images/v2v.png",
     "link" : "https://www.viewerstovolunteers.com/",
@@ -84,13 +84,12 @@
     "id" : 6,
     "name" : "Speech App",
     "about" : "Foreign language Speech app to manipulate, narrate, and translate content on the fly.",
-    "details" : "Built custom lexers to break up sentence structure into meaningful parts.",
+    "details" : "With the help of Google APIs, built custom lexers to break up sentence structure into meaningful parts.",
     "image" : "./data/assets/project_images/speech_api.png",
     "link" : "speech-api/",
     "tags" : [
       "featured",
-      "javascript",
-      "google apis"
+      "javascript"
     ],
     "github" : "https://github.com/dtturcotte/demos/tree/master/speech-api",
     "background-color" : "#f79f23",
@@ -99,13 +98,12 @@
   {
     "id" : 7,
     "name" : "Alexa-Slack Office Assistant",
-    "about" : "Add commands, such as lunch for the week or employee status, through Slack, which can be communicated through the Amazon Echo.",
-    "details" : "For example: \"Alexa, what is lunch for tomorrow?\".",
+    "about" : "Employees enter commands through Slack which can be communicated through the Amazon Echo.",
+    "details" : "Contact me to set up a demo through https://echosim.io/.",
     "image" : "./data/assets/project_images/alexa_slack.png",
     "link" : "https://github.com/dtturcotte/AlexaSlack",
     "tags" : [
       "node",
-      "slack apis",
       "iot"
     ],
     "github" : "https://github.com/dtturcotte/AlexaSlack",
@@ -115,7 +113,7 @@
   {
     "id" : 8,
     "name" : "Chinese RPG Teacher's Dashboard",
-    "about" : "Fully customized CMS and API to help teachers gauge their students learning progress.",
+    "about" : "Fully customized CMS and API to help teachers gauge their students' learning progress.",
     "details" : "",
     "image" : "./data/assets/project_images/clg_dashboard.png",
     "link" : "http://clg-dashboard.com.s3-website-us-east-1.amazonaws.com/#/",
@@ -146,7 +144,7 @@
     "id" : 10,
     "name" : "Interactive Algorithms",
     "about" : "A work in progress, I've started recreating animated algorithms to help myself and others understand their complexities.",
-    "details" : "Currently features BFS/DFS tree traversal, and a partially working A* Path Finder (something quite useful in my Chinese game).",
+    "details" : "Currently features BFS/DFS tree traversal and a partially working A* Path Finder.",
     "image" : "./data/assets/project_images/tree.png",
     "link" : "raphael-js/index.html",
     "tags" : [

@@ -80,12 +80,56 @@ hr {
   }
 }
 
+@keyframes shake {
+  10%, 90% {
+    transform: translate3d(-1px, 0, 0);
+  }
+
+  20%, 80% {
+    transform: translate3d(.5px, 0, 0);
+  }
+
+  30%, 50%, 70% {
+    transform: translate3d(-1px, 0, 0);
+  }
+
+  40%, 60% {
+    transform: translate3d(1px, 0, 0);
+  }
+}
+
+.font {
+  &.monospace {
+    font-family: monospace;
+    color: #494949 !important;
+  }
+}
+
+.blink_me {
+  animation: blinker 1.5s step-end infinite;
+  width: 4px;
+  height: 20px;
+  margin-top: 6px;
+  background: #545454;
+  display: inline-block;
+  float: right;
+  margin-left: 2px;
+}
+
+@keyframes blinker {
+  50% { opacity: 0.0; }
+}
+
 p {
   font-size: 16px;
   &.heading {
     font-size: 20px;
     display: inline-block;
     line-height: 1.6;
+    &.intro {
+      font-size: 22px;
+      text-align: left;
+    }
     &.block {
       display: block;
     }

@@ -30,6 +30,13 @@ $(document).ready(function () {
 		$.get('https://musicquiz-79603.firebaseio.com/.json', generateCloud);
 	}
 
+	$('#play_spotify').one('click', function () {
+		if ($('#spotify').is(':empty')) {
+			$('#spotify').append('<p>Give a listen if you have Spotify</p>' +
+			'<iframe src="https://embed.spotify.com/?uri=spotify%3Aartist%3A0WwSkZ7LtFUFjGjMZBMt6T" style="margin: 30px 0" width="300" height="380" frameborder="0" allowtransparency="true"></iframe>');
+		}
+	});
+
 	function sendAnswer() {
 		if ($('#music_quiz_input').val() === '') {
 			showMessage('<h3 class="incorrect">Please provide an answer!</h3>');

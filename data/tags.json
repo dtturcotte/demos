@@ -67,24 +67,6 @@
     }
   },
   {
-    "name" : "google apis",
-    "icon" : "../data/assets/google.png",
-    "strength" : 5,
-    "colors" : {
-      "background" : "rgba(255, 206, 86, 0.2)",
-      "border" : "rgba(255, 206, 86, 1)"
-    }
-  },
-  {
-    "name" : "slack apis",
-    "icon" : "../data/assets/slack.png",
-    "strength" : 5,
-    "colors" : {
-      "background" : "rgba(255, 206, 86, 0.2)",
-      "border" : "rgba(255, 206, 86, 1)"
-    }
-  },
-  {
     "name" : "python",
     "type" : "skill",
     "icon" : "../data/assets/python.png",

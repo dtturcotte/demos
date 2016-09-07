@@ -74,12 +74,16 @@
   &.large {
     padding: 15px;
     width: 220px;
-    font-size: 20px;
+    font-size: 18px;
   }
   &.margin-top {
     margin-top: 60px;
     &.small {
       margin-top: 25px;
     }
+  }
+  &.center {
+    display: block;
+    margin: 0 auto;
   }
 }
