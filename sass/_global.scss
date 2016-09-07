@@ -280,6 +280,9 @@ pre code {
   }
   &.light {
     background-image: radial-gradient(#fdfdfd,#bbb);
+    &.text-lighten {
+      color: #404040;
+    }
   }
   &.white {
     background-color: white;

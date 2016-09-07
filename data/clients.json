@@ -1,14 +1,14 @@
 [
   {
-    "name" : "Anheuser Busch"
+    "name" : "Anheuser-Busch",
+    "link" : "http://www.ab-inbev.com/"
   },
   {
-    "name" : "Shake Shack"
+    "name" : "YMCA",
+    "link" : "http://www.ymcanyc.org/association/pages/y-mvp"
   },
   {
-    "name" : "Anheuser Busch"
-  },
-  {
-    "name" : "Anheuser Busch"
+    "name" : "ZX Ventures",
+    "link" : "http://zx-ventures.com/"
   }
 ]

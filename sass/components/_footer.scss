@@ -4,8 +4,15 @@
   position: absolute;
   left: 0;
   right: 0;
+  p {
+    font-size: 18px;
+    &.small {
+      font-size: 15px;
+    }
+  }
   img {
     width: 40px;
+    margin-right: 10px;
     filter: brightness(100%);
     transition: .3s ease-in-out;
     &:hover {

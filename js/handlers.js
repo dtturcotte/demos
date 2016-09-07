@@ -66,6 +66,12 @@ $(document).ready(function () {
 		});
 	};
 
+	var getClients = function () {
+		$.get('/work/clients', function (res) {
+			$('#clients').hide().html(res).fadeIn('slow');
+		});
+	};
+
 	bindProjectHover();
 	bindProjectLink();
 	bindTagClick();

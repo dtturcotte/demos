@@ -47,6 +47,20 @@
       }
     }
   }
+  #clients {
+    color: white;
+    margin-top: 30px;
+    text-align: center;
+    font-weight: 600;
+    a {
+      font-family: 'Open Sans', Arial, sans-serif;
+      font-weight: 100;
+      margin: 20px 30px 0px;
+      color: inherit;
+      display: inline-block;
+      font-size: 20px;
+    }
+  }
   .projects {
     .project {
       position: relative;

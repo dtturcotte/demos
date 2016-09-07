@@ -1,6 +1,7 @@
 
 var projects = require('../../data/projects.json');
 var tags = require('../../data/tags.json');
+var clients = require('../../data/clients.json');
 
 var getProjects = function (tags) {
 
@@ -51,6 +52,7 @@ module.exports = {
 
 		res.render('index', {
 			data : projects_limit,
+			clients : clients,
 			tags : getTags(projects_limit)
 		});
 	},
@@ -64,6 +66,18 @@ module.exports = {
 	tags : function (req, res) {
 		res.render('partials/tags', {
 			tags: tags
+		});
+	},
+
+	/**
+	 * Render clients
+	 *
+	 * @param req
+	 * @param res
+	 */
+	clients : function (req, res) {
+		res.render('partials/clients', {
+			clients: clients
 		});
 	},
 
@@ -100,6 +114,7 @@ module.exports = {
 
 		res.render('partials/projects', {
 			data: filter_projects,
+			clients : clients,
 			tags: tags
 		});
 	}

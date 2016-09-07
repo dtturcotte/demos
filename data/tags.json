@@ -117,26 +117,6 @@
     }
   },
   {
-    "name" : "mysql",
-    "type" : "skill",
-    "icon" : "../data/assets/mysql.png",
-    "strength" : 6,
-    "colors" : {
-      "background" : "rgba(153, 102, 255, 0.2)",
-      "border" : "rgba(153, 102, 255, 1)"
-    }
-  },
-  {
-    "name" : "nosql",
-    "type" : "skill",
-    "icon" : "../data/assets/mongo.png",
-    "strength" : 5,
-    "colors" : {
-      "background" : "rgba(54, 162, 235, 0.2)",
-      "border" : "rgba(54, 162, 235, 1)"
-    }
-  },
-  {
     "name" : "django",
     "type" : "skill",
     "icon" : "../data/assets/django.png",
