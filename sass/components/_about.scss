@@ -20,8 +20,12 @@
     .code-block {
       text-align: left;
       font-size: 16px;
+
       img {
         width: 150px;
+        @include break(handset) {
+          width: 100px;
+        }
       }
     }
     .content-block {
@@ -31,7 +35,6 @@
         max-width: 900px;
         margin-top: -100px;
         filter: contrast(110%);
-//        float: right;
       }
       #guess_who {
         max-width: 800px;
@@ -49,17 +52,46 @@
         height: 350px;
         color: #fff;
         line-height: 1.4;
+
+        @include break(handset) {
+          width: 100%;
+          position: absolute;
+          z-index: 6;
+          margin-top: 30px;
+          &.text-block {
+            p {
+              margin-left: 0;
+            }
+          }
+        }
         &.music {
           width: 45%;
           height: auto;
+          @include break(handset) {
+            width: 100%;
+            position: relative;
+          }
         }
         .text-block {
           width: 80%;
-          margin: 110px auto 0;
+          margin: 18% auto 0;
           text-align: center;
           vertical-align: top;
+          @include break(tabletmax) {
+            width: 100%;
+            margin-top: 34%;
+          }
+          @include break(handset) {
+            width: 80%;
+            margin-top: 18%;
+          }
           p {
             margin-left: 30px;
+            @include break(handset) {
+              margin-left: 0;
+              text-align: center;
+              font-size: 20px;
+            }
           }
         }
       }
@@ -74,8 +106,17 @@
           position: relative;
           float: right;
           text-align: left;
+          @include break(handset) {
+            width: 100%;
+          }
+          #quiz {
+            overflow: hidden;
+          }
           .inner-text-block {
             width: 75%;
+            @include break(handset) {
+              width: 100%;
+            }
           }
         }
         .overlay {

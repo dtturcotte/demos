@@ -22,7 +22,7 @@ $(document).ready(function () {
 				display : false
 			},
 			responsive: true,
-			maintainAspectRatio: false,
+			maintainAspectRatio: (window.window_width < 480),
 			scales: {
 				gridLines : {
 					display : false,

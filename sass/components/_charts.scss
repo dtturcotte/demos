@@ -2,6 +2,9 @@
   box-sizing: border-box;
   width: 60%;
   margin: 0 auto;
+  @include break(handset) {
+    width: 90%;
+  }
   #chart {
     max-width: 700px;
     max-height: 700px;

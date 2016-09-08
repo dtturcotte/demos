@@ -11,11 +11,18 @@
         vertical-align: top;
         line-height: 1.8;
         margin-top: 2%;
+        @include break(handset) {
+          text-align: center;
+          width: 100%;
+        }
       }
       &.right {
         width: 72%;
         float: right;
         box-shadow: 1px 1px 12px 1px rgba(1, 1, 1, 0.1);
+        @include break(handset) {
+          width: 100%;
+        }
         img {
           width: 100%;
         }
@@ -28,11 +35,17 @@
     right: 0;
     opacity: .3;
     transition: opacity 1s, transform .5s;
+    @include break(handset) {
+      right: auto;
+    }
     &:hover {
       opacity: .4;
     }
     img {
       width: 665px;
+      @include break(handset) {
+        width: 550px;
+      }
     }
   }
   .chinese{

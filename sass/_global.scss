@@ -32,6 +32,9 @@ body {
     &.small {
       width: 60%;
       font-size: 100%;
+      @include break(tabletmax) {
+        width: 90%;
+      }
     }
     &.absolute {
       position: absolute;
@@ -126,9 +129,16 @@ p {
     font-size: 20px;
     display: inline-block;
     line-height: 1.6;
+    @include break(tabletmax) {
+      font-size: 18px;
+    }
     &.intro {
       font-size: 22px;
       text-align: left;
+      @include break(tabletmax) {
+        font-size: 18px;
+        margin-left: 0;
+      }
     }
     &.block {
       display: block;
@@ -195,6 +205,13 @@ pre code {
   display: inline-block;
   width: 100%;
   padding: 0 3px 0 140px;
+  overflow: hidden;
+  @include break(tabletmax) {
+    padding-left: 4%;
+  }
+  @include break(handset) {
+    padding-left: 4%;
+  }
 }
 
 .strip {
@@ -211,7 +228,6 @@ pre code {
   &.blue {
     text-align: center;
     background-color: #4b3d81;
-    min-width: 600px;
     &.gradient {
       background-image: linear-gradient(to right, rgba(57, 194, 218, 0), rgba(57, 194, 218, 1) 35%, rgba(57, 194, 218, 0));
     }
@@ -305,9 +321,15 @@ pre code {
   }
   &.lg {
     padding: 60px 0;
+    @include break(handset) {
+      padding: 20px 0;
+    }
   }
   &.sm {
     padding: 20px 0;
+    @include break(handset) {
+      padding: 10px 0;
+    }
   }
   &.center {
     text-align: center;

@@ -8,6 +8,11 @@
   z-index: 1000;
   text-shadow: 0 1px 3px rgba(0,0,0,.5);
   background-image: radial-gradient(rgba(111, 80, 206, .6), rgba(86, 75, 172, .6));
+  @include break(tabletmax) {
+    background-image: none;
+    background-color: rgba(0,0,0,.7);
+    text-align: center;
+  }
   .nav-items {
     margin-left: 100px;
     vertical-align: top;
@@ -17,11 +22,15 @@
     font-size: 14px;
     @include break(tabletmax) {
       float: none;
-      width: 110%;
+      width: 100%;
+      position: absolute;
+      left: 0;
+      top: 50px;
+      right: 0;
+      height: 40px;
       text-align: center;
-      background-color: rgba(0,0,0,.6);
-      margin-left: -26px;
-      margin-top: -6px;
+      margin-left: 0;
+      background-color: rgba(0,0,0,.5);
     }
     a {
       color: white;
@@ -44,6 +53,9 @@
       span {
         display: inherit;
         margin-top: 16px;
+        @include break(tabletmax) {
+          margin-top: 12px;
+        }
         &:hover {
           color: white;
         }

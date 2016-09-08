@@ -15,7 +15,7 @@
 }
 
 
-@mixin break($point, $type: 'min') {
+@mixin break($point) {
 
 
 	@if $point == handset-xsm {
