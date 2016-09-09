@@ -207,10 +207,10 @@ pre code {
   background-color: #f9f9f9;
   display: inline-block;
   width: 100%;
-  padding: 0 3px 0 140px;
+  padding: 0 3px 0 200px;
   overflow: hidden;
   @include break(tabletmax) {
-    padding-left: 4%;
+    padding-left: 24%;
   }
   @include break(handset) {
     padding-left: 4%;

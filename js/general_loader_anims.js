@@ -22,7 +22,7 @@ $(document).ready(function () {
 
 	$(window).on('scroll', function() {
 		var scrollTop = $(this).scrollTop();
-		
+
 		if (window.window_width < 767 && scrollTop > 0 && scrolledToTop && !animating) {
 			animating = true;
 			$('.nav-items').animate({top:0}, 250, function() {
