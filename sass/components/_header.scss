@@ -43,6 +43,9 @@
       background-image: radial-gradient(rgba(143,119,218,.8),rgba(124, 113, 212, 0.6))
     }
     div {
+      @include break(handset) {
+        width: 24%;
+      }
       display: inline-block;
       width: 100px;
       height: 100%;
