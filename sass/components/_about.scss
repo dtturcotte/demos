@@ -108,6 +108,7 @@
           text-align: left;
           @include break(handset) {
             width: 100%;
+            text-align: center;
           }
           #quiz {
             overflow: hidden;
