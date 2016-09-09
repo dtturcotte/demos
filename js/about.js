@@ -2,17 +2,7 @@ var d3 = require('d3'),
 	cloud = require('d3.layout.cloud');
 
 $(document).ready(function () {
-
-	//localStorage.clear();
-
-	//$.ajax({
-	//	url: 'https://musicquiz-79603.firebaseio.com/.json',
-	//	type: 'DELETE',
-	//	success: function(result) {
-	//		// Do something with the result
-	//	}
-	//});
-
+	
 	if (localStorage.getItem('quiz_answered') === null) {
 
 		$('#music_quiz_input').keypress(function (e) {
@@ -109,7 +99,7 @@ $(document).ready(function () {
 			var fill = d3.scale.category20();
 
 			var layout = cloud()
-				.size([700, 500])
+				.size([400, 500])
 				.words(unique_words.map(function (w) {
 					return {
 						text : w,
