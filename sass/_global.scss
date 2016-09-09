@@ -50,6 +50,9 @@ body {
       right: 0;
       &.home {
         top: 115px;
+        @include break(tabletmax) {
+          top: 70px;
+        }
       }
     }
   }
