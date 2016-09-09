@@ -325,13 +325,13 @@ pre code {
   &.lg {
     padding: 60px 0;
     @include break(handset) {
-      padding: 20px 0;
+      padding: 35px 0;
     }
   }
   &.sm {
     padding: 20px 0;
     @include break(handset) {
-      padding: 10px 0;
+      padding: 15px 0;
     }
   }
   &.center {

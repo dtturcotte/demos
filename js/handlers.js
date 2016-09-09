@@ -17,10 +17,15 @@ $(document).ready(function () {
 
 	var bindProjectLink = function () {
 		$('.project').on('click', function () {
-			window.open($(this).data('link'), '_blank');
+
+			if (window.window_width <= 480 && !$(this).data('clicked')) {
+				$(this).find('.info').css('height', '100%');
+				$(this).data('clicked', true);
+			} else {
+				window.open($(this).data('link'), '_blank');
+			}
 		});
 		$('.project').find('.github_link').on('click', function (e) {
-			// prevent parent project event handler from firing on nested github icon click
 			e.stopPropagation();
 		});
 	};
@@ -29,7 +34,6 @@ $(document).ready(function () {
 
 		$.post('/tags', function (res) {
 			$('#tag-container').html(res);
-			console.log('hiding');
 			$('#see-more-tags, #see-more-projects').hide();
 			setProjects(tags);
 			bindTagClick();
@@ -41,7 +45,6 @@ $(document).ready(function () {
 		$('.tag').on('click', function() {
 			$el = $(this);
 			$el_text = $el.find('span').text();
-			console.log('clicked', $el_text);
 			if ($el.hasClass('clicked')) {
 				$el.removeClass('clicked');
 				var index = tags.indexOf($el_text);
@@ -53,7 +56,6 @@ $(document).ready(function () {
 				tags.push($el_text);
 			}
 			var tag_input = (tags.length === 0 && !all_tags_loaded) ? 'initial' : tags;
-			console.log('setting projects', tag_input);
 			setProjects(tag_input);
 		});
 	};
