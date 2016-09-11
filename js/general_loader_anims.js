@@ -10,8 +10,13 @@ $(document).ready(function () {
 
 	window.window_width = $window.width();
 
+	// Initial page highlighting
+	if (nav_url === '/') {
+		$('[data-url="/about"]').parent().addClass('active');
+	}
+
 	$('.nav-items').find('span').each(function () {
-		if ($(this).data('url') === nav_url) {
+		if (($(this).data('url') === nav_url)) {
 			$(this).parent().addClass('active');
 		}
 	});

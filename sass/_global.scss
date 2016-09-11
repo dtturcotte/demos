@@ -139,7 +139,6 @@ p {
       font-size: 22px;
       text-align: left;
       @include break(tabletmax) {
-        font-size: 18px;
         margin-left: 0;
       }
     }
