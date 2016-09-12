@@ -326,6 +326,11 @@ pre code {
   }
   &.lg {
     padding: 60px 0;
+    &.shrink {
+      @include break(tabletmax) {
+        padding: 35px 0;
+      }
+    }
     @include break(handset) {
       padding: 35px 0;
     }

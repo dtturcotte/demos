@@ -11,7 +11,7 @@
         vertical-align: top;
         line-height: 1.8;
         margin-top: 2%;
-        @include break(handset) {
+        @include break(tabletmax) {
           text-align: center;
           width: 100%;
         }
@@ -20,7 +20,7 @@
         width: 72%;
         float: right;
         box-shadow: 1px 1px 12px 1px rgba(1, 1, 1, 0.1);
-        @include break(handset) {
+        @include break(tabletmax) {
           width: 100%;
         }
         img {
