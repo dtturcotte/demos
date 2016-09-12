@@ -40,6 +40,17 @@
                         <p class="heading">Everything from comprehensive test prep platforms to Alexa voice ordering beer experiences.</p>
                     </section>
                 </div>
+                <% var recommendation =  JSON.parse(recommendations); %>
+                <% if (recommendation) { %>
+                <div class="full-section center sm off-white">
+                    <section class="content small">
+                        <div class="linked_in">
+                            <p><i class="fa fa-quote-left" aria-hidden="true"></i> <%= recommendation.recommendationsReceived.values[0].recommendationText %></p>
+                            <p class="recommender"><i>-<%= recommendation.recommendationsReceived.values[0].recommender.firstName + ' ' + recommendation.recommendationsReceived.values[0].recommender.lastName %>, CTO | AB-InBev (<a class="link" target="_blank" href="https://www.linkedin.com/in/daniel-turcotte-40566817">from LinkedIn</a>)</i></p>
+                        </div>
+                    </section>
+                </div>
+                <% } %>
                 <div class="full-section center sm white">
                     <section class="content small">
                         <p class="heading">Technologies I work with...</p>

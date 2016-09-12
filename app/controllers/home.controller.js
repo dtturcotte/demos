@@ -2,6 +2,7 @@
 var projects = require('../../data/projects.json');
 var tags = require('../../data/tags.json');
 var clients = require('../../data/clients.json');
+var rp = require('request-promise');
 
 var getProjects = function (tags) {
 
@@ -36,6 +37,10 @@ var getTags = function (projects) {
 	return project_tags;
 };
 
+var getRecommendations = function () {
+	return rp('https://api.linkedin.com/v1/people/~:(id,first-name,recommendations-received:(id,recommendation-type,recommendation-text,recommender))?oauth2_access_token=AQX128wrEx3uxMgM__T3NvRaf82sUB4vKO4O0t3AksDJSpQBdREb-DTqSRrq_LtFfcvq2PTUy5iFOui4WjZ14U7AF5g1UB0sGmYS07gwK9Wm1wb9z8PmqzrrYjMSBFUYXRM6hpL1b3xa2XFhfHGQqsllqeVrq04RxL6dw_MavN4cIfze3_o&format=json');
+};
+
 module.exports = {
 
 	/*
@@ -49,12 +54,22 @@ module.exports = {
 		});
 
 		projects_limit.length = 6;
-
-		res.render('index', {
-			data : projects_limit,
-			clients : clients,
-			tags : getTags(projects_limit)
+		getRecommendations().then(function(data) {
+			res.render('index', {
+				data : projects_limit,
+				clients : clients,
+				tags : getTags(projects_limit),
+				recommendations : data
+			});
+		}).catch(function (err) {
+			res.render('index', {
+				data : projects_limit,
+				clients : clients,
+				tags : getTags(projects_limit),
+				recommendations : null
+			});
 		});
+
 	},
 
 	/**

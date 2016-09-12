@@ -1,5 +1,11 @@
 .work {
   letter-spacing: 1.3px;
+  .linked_in {
+    line-height: 1.8;
+    .recommender {
+      color: #393939;
+    }
+  }
   .content-blocks {
     margin-bottom: 70px;
     display: inline-block;
