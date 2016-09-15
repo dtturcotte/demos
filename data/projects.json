@@ -5,7 +5,7 @@
     "about" : "Sole developer and designer on a team of four to conceptualize and develop a comprehensive dental test prep platform.",
     "details" : "It features an intuitive frontend and full CMS, with an OAuth2-secured API.",
     "image" : "./data/assets/project_images/dde.png",
-    "link" : "www.dynamicdentaledu.com",
+    "link" : "http://dynamicdentaledu.com/",
     "tags" : [
       "freelance",
       "laravel",
