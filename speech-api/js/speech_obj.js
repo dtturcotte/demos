@@ -1,5 +1,5 @@
 
-document.addEventListener("DOMContentLoaded", function(event) {
+document.addEventListener('DOMContentLoaded', function(event) {
 
 	(function () {
 
@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 				speech_toggle = document.getElementById('toggle_speech'),
 				pronunciation_speed_slider = document.getElementById('pronunciation_speed_slider'),
 				speech_rate = 1,
-				recognition_lang = 'en-us';
+				recognition_lang = 'en-us',
 				command = '',
 				narrating = false,
 				valid_languages = [
@@ -43,9 +43,9 @@ document.addEventListener("DOMContentLoaded", function(event) {
 				/*
 					Bind click handlers
 				 */
-				speech_toggle.addEventListener("click", this.speak.bind(this), false);
+				speech_toggle.addEventListener('click', this.speak.bind(this), false);
 
-				speech_toggle.innerHTML = "Speak in ";
+				speech_toggle.innerHTML = 'Speak in ';
 
 				setValidLanguages();
 
@@ -56,13 +56,13 @@ document.addEventListener("DOMContentLoaded", function(event) {
 				if (speaking) {
 					speaking = false;
 					this.stop_recognition(e);
-					speech_toggle.innerHTML = "Speak in ";
+					speech_toggle.innerHTML = 'Speak in ';
 
 
 				} else {
 					speaking = true;
 					this.start_recognition(e);
-					speech_toggle.innerHTML = "Stop Speaking in ";
+					speech_toggle.innerHTML = 'Stop Speaking in ';
 				}
 			};
 
@@ -107,9 +107,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 				utterance.rate = speech_rate;
 
 				var lang = (object.language) ? object.language.code : 'en-us';
-
-				console.log('LANG', lang);
-
+				
 				switch (lang) {
 					case 'es':
 						lang = 'es-CO';
@@ -127,18 +125,13 @@ document.addEventListener("DOMContentLoaded", function(event) {
 						lang = 'en-GB';
 						break;
 				}
-
-				console.log('LANG 2', lang);
-
+				
 				utterance.lang = lang;
 
 				var text_to_narrate = $.grep(object.content.content, function (obj) {
-
-					console.log('test', obj, object);
 					return obj.code.toLowerCase() === object.language.code;
 				});
 
-				console.log('TEXT TO ', text_to_narrate);
 				utterance.text = text_to_narrate[0].text;
 
 				utterance.onend = function (e) {
@@ -147,7 +140,6 @@ document.addEventListener("DOMContentLoaded", function(event) {
 				};
 
 				speechSynthesis.speak(utterance);
-
 			};
 
 			api.start_recognition = function (e) {
@@ -169,7 +161,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 				};
 
 				recognition.onend = function (event) {
-					speech_toggle.innerHTML = "Speak in ";
+					speech_toggle.innerHTML = 'Speak in ';
 				};
 
 				recognition.onerror = function (event) {

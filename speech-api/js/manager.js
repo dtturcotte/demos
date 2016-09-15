@@ -69,7 +69,6 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
 				var request =
 					(function (i) {
-						console.log('lang', lang, text);
 						$.get('https://www.googleapis.com/language/translate/v2?key=AIzaSyAXbRdkAHVXEobDVGkOePwDGMk1mKNdey4&source=en&target=' + lang + '&q=' + text,
 							function (json) {
 								self.content[i].content.push(
@@ -246,8 +245,6 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
 			var self = this;
 
-			console.log('TEST', args.content.id);
-
 			switch (action.verbs[0]) {
 				case 'read':
 					read();
@@ -272,7 +269,6 @@ document.addEventListener("DOMContentLoaded", function(event) {
 			function read() {
 				var $contentObject = $('.article').find('#'+args.content.id);
 				self.checkState($contentObject);
-				console.log('NATIVE', args);
 				Utilities.STT.native(args);
 				clearError();
 			};
