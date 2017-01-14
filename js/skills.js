@@ -29,9 +29,14 @@ $(document).ready(function () {
 					zeroLineWidth : 0
 				},
 				xAxes: [{
-					stacked: true
+					stacked: true,
+					gridLines: {
+						display: false,
+						drawBorder: false
+					}
 				}],
 				yAxes: [{
+					display: false,
 					stacked: true,
 					ticks: {
 						max: 10,
@@ -39,6 +44,9 @@ $(document).ready(function () {
 						stepSize: 5
 					}
 				}]
+			},
+			tooltips: {
+				enabled: false
 			}
 		}
 	}

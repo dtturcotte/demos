@@ -46,7 +46,28 @@
                     <section class="content small">
                         <div class="linked_in">
                             <p><i class="fa fa-quote-left" aria-hidden="true"></i> <%= recommendation.recommendationsReceived.values[0].recommendationText %></p>
-                            <p class="recommender">–<%= recommendation.recommendationsReceived.values[0].recommender.firstName + ' ' + recommendation.recommendationsReceived.values[0].recommender.lastName %>, CTO | AB-InBev (<a class="link" target="_blank" href="https://www.linkedin.com/in/daniel-turcotte-40566817">from LinkedIn</a>)</p>
+                            <p class="recommender">
+                                –<%= recommendation.recommendationsReceived.values[0].recommender.firstName + ' ' + recommendation.recommendationsReceived.values[0].recommender.lastName %>,
+                                CTO | AB-InBev (<a target="_blank" href="https://www.linkedin.com/in/daniel-turcotte-40566817"><i class="fa fa-linkedin-square fa-lg" aria-hidden="true"></i></a>)
+                            </p>
+                        </div>
+                    </section>
+                </div>
+                <% } else { %>
+                <div class="full-section center sm off-white">
+                    <section class="content small">
+                        <div class="linked_in">
+                            <p>
+                                <i class="fa fa-quote-left" aria-hidden="true"></i>
+                                Dan is a very talented developer who consistently learns new technologies and figures out
+                                ingenious ways to use them. In the past few months of working together, in addition to building
+                                a production ready IoT capability, he built a VR experience, voice translation services, and many
+                                other innovative demos. He is a great catch for any innovative team.
+                            </p>
+                            <p class="recommender">
+                                –France Roy,
+                                CTO | AB-InBev (<a target="_blank" href="https://www.linkedin.com/in/daniel-turcotte-40566817"><i class="fa fa-linkedin-square fa-lg" aria-hidden="true"></i></a>)
+                            </p>
                         </div>
                     </section>
                 </div>
