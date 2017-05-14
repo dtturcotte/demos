@@ -7,8 +7,6 @@ module.exports = function (req, res, next) {
 	botPayload.text = 'AH AH AH, YOU DIDN\'T SAY THE MAGIC WORD!';
 	botPayload.channel = req.body.channel_id;
 
-	//return res.status(200).send('dante is losssaded');
-
 	if (typeof req.body.text !== 'undefined') {
 		botPayload.userToGet = req.body.text.split('^')[0];
 
