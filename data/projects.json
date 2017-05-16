@@ -23,7 +23,7 @@
     "details" : "Implemented speech recognition and native pronunciation to test users' oral and listening skills.",
     "image" : "./data/assets/project_images/clg.png",
 
-    "link" : "http://clg-dev.elasticbeanstalk.com/",
+    "link" : "http://custom-env-1.us53cxnpxi.us-east-1.elasticbeanstalk.com/",
     "tags" : [
       "featured",
       "javascript",

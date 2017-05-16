@@ -1,8 +1,9 @@
 var express = require('express');
 var bodyParser = require('body-parser');
+require('dotenv').load();
 
 var app = express();
-var port = process.env.PORT || 9000;
+var port = process.env.PORT || 80;
 var path = require('path');
 var globals = require('./config/globals');
 
