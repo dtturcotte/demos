@@ -357,4 +357,73 @@ pre code {
       height: 250px;
     }
   }
+
+  .content-blocks {
+    margin-bottom: 70px;
+    display: inline-block;
+    line-height: 1.6;
+    @include break(handset) {
+      margin-bottom: 35px;
+    }
+    &.left-image {
+      .content-block {
+        display: inline-block;
+        &.left {
+          width: 50%;
+          float: left;
+          box-shadow: 1px 1px 12px 1px rgba(1, 1, 1, 0.1);
+          img {
+            width: 100%;
+          }
+          @include break(handset) {
+            width: 100%;
+            float: none;
+          }
+        }
+        &.right {
+          width: 45%;
+          float: right;
+          text-align: left;
+          vertical-align: top;
+          line-height: 1.8;
+          margin-top: 2%;
+          @include break(handset) {
+            width: 100%;
+            float: none;
+            text-align: left;
+          }
+        }
+      }
+    }
+    &.right-image {
+      .content-block {
+        display: inline-block;
+        &.left {
+          width: 45%;
+          float: left;
+          text-align: right;
+          vertical-align: top;
+          line-height: 1.8;
+          margin-top: 2%;
+          @include break(handset) {
+            width: 100%;
+            float: none;
+            text-align: left;
+          }
+        }
+        &.right {
+          width: 50%;
+          float: right;
+          box-shadow: 1px 1px 12px 1px rgba(1, 1, 1, 0.1);
+          img {
+            width: 100%;
+          }
+          @include break(handset) {
+            width: 100%;
+            float: none;
+          }
+        }
+      }
+    }
+  }
 }

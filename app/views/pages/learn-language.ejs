@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+    <% include ../partials/head %>
+  </head>
+	<body>
+		<div class="app-wrapper">
+			<header>
+        <% include ../partials/header %>
+      </header>
+      <div class="full-section clg-img lg of-hidden center height">
+          <div class="overlay-img"></div>
+          <section class="content small overlay home">
+              <a href="http://custom-env-1.us53cxnpxi.us-east-1.elasticbeanstalk.com/" target="_blank">
+                  <h1 class="chinese large text-shadow"><%= product_name %></h1>
+              </a>
+              <p class="heading block"><%= product_tagline %></p>
+          </section>
+      </div>
+      <% include ../partials/game_detail %>
+    </div>
+  </body>
+</html>

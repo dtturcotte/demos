@@ -25,6 +25,7 @@ module.exports = function (app, globals, path) {
 		Home
 	 */
 	app.get('/', about.index);
+	app.get('/learn-language', home.edtech);
 	app.get('/work', home.index);
 	app.get('/work/clients', home.clients);
 	app.post('/projects', home.projects);
